@@ -41,6 +41,15 @@ def drawRect(c, x, y, w, h, a, color):
     p.lineTo(x, y + 0.5 * a)                                                                # vertcal line
     c.drawPath(p, stroke = 0, fill = 1)
     
+def drawTriangle(c, x, y, s, color):    
+    c.setFillColor(HexColor(color))
+    p = c.beginPath()
+    p.moveTo(x, y)
+    p.lineTo(x + s, y)
+    p.lineTo(x + s, y + s)
+    p.lineTo(x, y)
+    c.drawPath(p, stroke = 0, fill = 1)
+    
 def scaleSVG(svgfile, scaling_factor):
     svg_root = load_svg_file(svgfile)
     svgRenderer = SvgRenderer(svgfile)
@@ -80,6 +89,7 @@ A4_height = A4[1]
 c = Canvas("PDF/Reggae.pdf", pagesize=landscape(A4))
 c.drawImage("Photos/Example.png", 200, 100, width = 115, height = 76, mask='auto')
 drawRect(c, 300, 300, 50, 50, 20, yellowbackground)
+drawTriangle(c, 400, 400, 150, yellowbackground)
 c.save()
 
 key = input("Wait")
