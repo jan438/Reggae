@@ -27,6 +27,19 @@ from reportlab.graphics.charts.textlabels import Label
 
 yellowbackground = "#ffde22"
 
+def drawRect(c, activity_x, activity_y, w, h, a, color):    
+    c.setFillColor(HexColor(color))
+    p = c.beginPath()
+    p.moveTo(activity_x, activity_y + 0.5 * a)
+    p.arcTo(activity_x, activity_y, activity_x + a, activity_y + a, startAng = 180, extent = 90)  # arc left below
+    p.lineTo(activity_x + w, activity_y)                                                           # horizontal line
+    p.arcTo(activity_x + w, activity_y, activity_x + w + a, activity_y + a, startAng = 270, extent = 90)  # arc right below
+    p.lineTo(activity_x + w + a, activity_y + h)                                                      # vertcal line
+    p.arcTo(activity_x + w, activity_y + h, activity_x + w + a, activity_y + h + a, startAng = 0, extent = 90)     # arc right above
+    p.lineTo(activity_x + 0.5 * a, activity_y + h + a)                                                   # horizontal line
+    p.arcTo(activity_x, activity_y + h, activity_x + a, activity_y + h + a, startAng = 90, extent = 90)    # arc left above
+    p.lineTo(activity_x, activity_y + 0.5 * a)                                                                # vertcal line
+    c.drawPath(p, stroke = 0, fill = 1)
 def scaleSVG(svgfile, scaling_factor):
     svg_root = load_svg_file(svgfile)
     svgRenderer = SvgRenderer(svgfile)
@@ -65,6 +78,7 @@ A4_height = A4[1]
 
 c = Canvas("PDF/Reggae.pdf", pagesize=landscape(A4))
 c.drawImage("Photos/Example.png", 200, 100, width = 115, height = 76, mask='auto')
+drawRect(c, 300, 300, 50, 50, 20, yellowbackground)
 c.save()
 
 key = input("Wait")
