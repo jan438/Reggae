@@ -25,7 +25,7 @@ from reportlab.graphics.widgets import signsandsymbols
 from reportlab.graphics.widgets.signsandsymbols import _Symbol
 from reportlab.graphics.charts.textlabels import Label
 
-d = Drawing(595, 842)
+yellowbackground = "#ffde22"
 
 def scaleSVG(svgfile, scaling_factor):
     svg_root = load_svg_file(svgfile)
@@ -63,7 +63,8 @@ pdfmetrics.registerFont(TTFont('CormorantGaramondBoldItalic', 'CormorantGaramond
 A4_width = A4[0]
 A4_height = A4[1]
 
-d.add(Image(path = "Photos/Example.png", width = 115, height = 76, x = 100, y = 200))
-renderPDF.drawToFile(d, 'PDF/Reggae.pdf')
+c = Canvas("PDF/Reggae.pdf", pagesize=landscape(A4))
+c.drawImage("Photos/Example.png", 200, 100, width = 115, height = 76, mask='auto')
+c.save()
 
 key = input("Wait")
