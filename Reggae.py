@@ -15,6 +15,25 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase.pdfmetrics import registerFontFamily
 from svglib.svglib import svg2rlg, load_svg_file, SvgRenderer
+from pypdf import PdfReader, PdfWriter
+from reportlab.pdfgen.canvas import Canvas
+from reportlab.lib.pagesizes import LETTER, A4, landscape, portrait
+from reportlab.lib.units import inch
+from reportlab.lib.colors import blue, green, black, red, pink, gray, brown, purple, orange, yellow, white, lightgrey
+from reportlab.pdfbase import pdfmetrics  
+from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.pdfbase.pdfmetrics import registerFontFamily
+from reportlab.lib.enums import TA_LEFT, TA_RIGHT, TA_CENTER
+from reportlab.graphics.shapes import *
+from reportlab.graphics import renderPDF
+from reportlab.graphics import shapes
+from reportlab.graphics import widgetbase
+from reportlab.graphics.widgetbase import Widget
+from reportlab.graphics.widgets import signsandsymbols
+from reportlab.graphics.widgets.signsandsymbols import _Symbol
+from reportlab.graphics.charts.textlabels import Label
+
+d = Drawing(595, 842)
 
 def scaleSVG(svgfile, scaling_factor):
     svg_root = load_svg_file(svgfile)
