@@ -40,6 +40,7 @@ def drawRect(c, x, y, w, h, a, color):
     p.arcTo(x, y + h, x + a, y + h + a, startAng = 90, extent = 90)    # arc left above
     p.lineTo(x, y + 0.5 * a)                                                                # vertcal line
     c.drawPath(p, stroke = 0, fill = 1)
+    
 def scaleSVG(svgfile, scaling_factor):
     svg_root = load_svg_file(svgfile)
     svgRenderer = SvgRenderer(svgfile)
