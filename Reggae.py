@@ -63,7 +63,7 @@ pdfmetrics.registerFont(TTFont('CormorantGaramondBoldItalic', 'CormorantGaramond
 A4_width = A4[0]
 A4_height = A4[1]
 
-d.add(Image(path = "Photos/Example.png", width = 71.25, height = 95, x = 0, y = 0))
+d.add(Image(path = "Photos/Example.png", width = 115, height = 76, x = 100, y = 200))
 renderPDF.drawToFile(d, 'PDF/Reggae.pdf')
 
 key = input("Wait")
