@@ -66,6 +66,8 @@ c = Canvas("PDF/Reggae.pdf", pagesize=landscape(A4))
 c.setFillColor(HexColor("#97ffaf"))
 c.rect(0, 0, A4_height, A4_width, fill = 1)
 
+d.add(Image(path = "Photos/Example.png", width = 71.25, height = 95, x = 0, y = 0))
+
 c.save()
 
 key = input("Wait")
