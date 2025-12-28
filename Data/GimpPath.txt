@@ -1,0 +1,7 @@
+Changing a selection to a path can never be exact. An ordinary selection is made up of pixels, whereas a path is a vector. In converting a raster selection to a vector path, the exactness of a pixel selection will be lost. If there were fewer anchors, then the Path would be even more imprecise.
+
+It is however possible to delete anchor points, if you select one with the Paths Tool, and hit Backspace. It's also possible to add anchors by holding down Ctrl as you click on the path with the Paths Tool.
+
+If you want to make more exact Paths, it's better to create them manually with the Paths Tool. Learning how to use the tool is a valuable skill. There are no shortcuts to creating exact paths. This of course goes for all image editing software that has vector capabilities.
+
+If you find yourself using vectors frequently, it might be better to consider using actual vector image editing software, such as Inkscape or Illustrator. With these you can simplify paths to remove excessive anchors.
