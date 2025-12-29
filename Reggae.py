@@ -45,10 +45,10 @@ def drawTriangle(c, x, y, w, h, d, color):
     c.setFillColor(HexColor(color))
     p = c.beginPath()
     if d == 0:                    #hexagonal right under
-        p.moveTo(x, y)
+        p.moveTo(x, y - h)
+        p.lineTo(x + w, y - h)
         p.lineTo(x + w, y)
-        p.lineTo(x + w, y + h)
-        p.lineTo(x, y)
+        p.lineTo(x, y - h)
     if d == 1:                    #hexagonal left under
         p.moveTo(x + w, y)
         p.lineTo(x, y + h)
