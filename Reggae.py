@@ -116,7 +116,7 @@ c.drawImage("Photos/Example.png", 200, 100, width = 115, height = 76, mask='auto
 gimg = transform_svg("Photos/BobMarley.svg", 300, 300, 0.5 , 0.5)
 print("gimp", gimg)
 drawRect(c, 300, 300, 50, 50, 20, yellowbackground)
-drawTriangle(c, 200, 200, 50, 75, 0, yellowbackground)
+drawTriangle(c, 200, 275, 50, 75, 0, yellowbackground)
 drawTriangle(c, 150, 200, 50, 75, 1, yellowbackground)
 drawTriangle(c, 150, 275, 50, 75, 2, yellowbackground)
 drawTriangle(c, 200, 275, 50, 75, 3, yellowbackground)
