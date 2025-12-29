@@ -44,8 +44,8 @@ def drawRect(c, x, y, w, h, a, color):
 def drawTriangle(c, x, y, w, h, d, color):    
     c.setFillColor(HexColor(color))
     p = c.beginPath()
-    p.moveTo(x, y)
     if d == 0:                    #hexagonal right under
+        p.moveTo(x, y)
         p.lineTo(x + w, y)
         p.lineTo(x + w, y + h)
         p.lineTo(x, y)
@@ -101,7 +101,7 @@ c.drawImage("Photos/Example.png", 200, 100, width = 115, height = 76, mask='auto
 gimg = transform_svg("Photos/BobMarley.svg", 300, 300, 0.5 , 0.5)
 print("gimp", gimg)
 drawRect(c, 300, 300, 50, 50, 20, yellowbackground)
-drawTriangle(c, 400, 400, 150, 175, 0, yellowbackground)
+drawTriangle(c, 200, 200, 50, 75, 0, yellowbackground)
 c.save()
 
 key = input("Wait")
