@@ -49,6 +49,11 @@ def drawTriangle(c, x, y, w, h, d, color):
         p.lineTo(x + w, y)
         p.lineTo(x + w, y + h)
         p.lineTo(x, y)
+    if d == 1:                    #hexagonal left under
+       p.moveTo(x + w, y)
+       p.lineTo(x, y + h)
+       p.lineTo(x, y)
+       p.lineTo(x + w, y)
     c.drawPath(p, stroke = 0, fill = 1)
     
 def scaleSVG(svgfile, scaling_factor):
@@ -102,6 +107,7 @@ gimg = transform_svg("Photos/BobMarley.svg", 300, 300, 0.5 , 0.5)
 print("gimp", gimg)
 drawRect(c, 300, 300, 50, 50, 20, yellowbackground)
 drawTriangle(c, 200, 200, 50, 75, 0, yellowbackground)
+drawTriangle(c, 150, 200, 50, 75, 1, yellowbackground)
 c.save()
 
 key = input("Wait")
