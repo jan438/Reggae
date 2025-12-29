@@ -56,8 +56,8 @@ def drawTriangle(c, x, y, w, h, d, color):
         p.lineTo(x + w, y)
     if d == 2:                    #hexagonal left above
         p.moveTo(x, y)
+        p.lineTo(x + w, y + h)
         p.lineTo(x, y + h)
-        p.lineTo(x + w, y)
         p.lineTo(x, y)
     c.drawPath(p, stroke = 0, fill = 1)
     
