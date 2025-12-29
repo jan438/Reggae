@@ -50,10 +50,10 @@ def drawTriangle(c, x, y, w, h, d, color):
         p.lineTo(x + w, y)
         p.lineTo(x, y - h)
     if d == 1:                    #hexagonal left under
-        p.moveTo(x + w, y)
-        p.lineTo(x, y + h)
-        p.lineTo(x, y)
-        p.lineTo(x + w, y)
+        p.moveTo(x, y - h)
+        p.lineTo(x - w, y - h)
+        p.lineTo(x - w, y)
+        p.lineTo(x, y - h)
     if d == 2:                    #hexagonal left above
         p.moveTo(x, y)
         p.lineTo(x + w, y + h)
