@@ -59,6 +59,11 @@ def drawTriangle(c, x, y, w, h, d, color):
         p.lineTo(x + w, y + h)
         p.lineTo(x, y + h)
         p.lineTo(x, y)
+    if d == 3:                    #hexagonal right above
+        p.moveTo(x, y + h)
+        p.lineTo(x + w, y + h)
+        p.lineTo(x + w, y)
+        p.lineTo(x, y + h)
     c.drawPath(p, stroke = 0, fill = 1)
     
 def scaleSVG(svgfile, scaling_factor):
@@ -114,6 +119,7 @@ drawRect(c, 300, 300, 50, 50, 20, yellowbackground)
 drawTriangle(c, 200, 200, 50, 75, 0, yellowbackground)
 drawTriangle(c, 150, 200, 50, 75, 1, yellowbackground)
 drawTriangle(c, 150, 275, 50, 75, 2, yellowbackground)
+drawTriangle(c, 200, 275, 50, 75, 3, yellowbackground)
 c.save()
 
 key = input("Wait")
