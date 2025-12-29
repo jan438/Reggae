@@ -61,6 +61,15 @@ def scaleSVG(svgfile, scaling_factor):
     drawing.scale(scaling_x, scaling_y)
     return drawing
     
+def transform_svg(svgfile, tx, ty, sx, sy): 
+    svg_root = load_svg_file(svgfile)
+    svgRenderer = SvgRenderer(svgfile)
+    df1 = svgRenderer.render(svg_root)
+    gimg = df1.asGroup()
+    gimg.translate(tx, ty)
+    gimg.scale(sx, sy)
+    return gimg
+    
 if sys.platform[0] == 'l':
     path = '/home/jan/git/Reggae'
 if sys.platform[0] == 'w':
@@ -88,6 +97,7 @@ A4_height = A4[1]
 
 c = Canvas("PDF/Reggae.pdf", pagesize=landscape(A4))
 c.drawImage("Photos/Example.png", 200, 100, width = 115, height = 76, mask='auto')
+gimg = transform_svg("Photos/BobMarley.svg", 300, 300, 0.5 , 0.5)
 drawRect(c, 300, 300, 50, 50, 20, yellowbackground)
 drawTriangle(c, 400, 400, 150, yellowbackground)
 c.save()
