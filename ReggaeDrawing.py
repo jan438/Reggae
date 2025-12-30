@@ -96,11 +96,13 @@ pdfmetrics.registerFont(TTFont('CormorantGaramondBoldItalic', 'CormorantGaramond
 A4_width = A4[0]
 A4_height = A4[1]
 
-avatars = 0.04
+avatars = 0.1
 
 d = Drawing(297*mm, 210*mm)
-d.add(transform_svg("Photos/BobMarley.svg", 20, 20, avatars, avatars))
+d.add(transform_svg("Photos/BobMarley.svg", 200, 200, avatars, avatars))
 drawHexagon(d, 50, 50, 10, yellowbackground)
+d.add(transform_svg("Photos/PeterTosh.svg", 80, 80, avatars, avatars))
 renderPDF.drawToFile(d, 'PDF/ReggaeDrawing.pdf')
+
 
 key = input("Wait")
