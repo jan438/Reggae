@@ -41,30 +41,15 @@ def drawRect(c, x, y, w, h, a, color):
     p.lineTo(x, y + 0.5 * a)                                                                # vertcal line
     c.drawPath(p, stroke = 0, fill = 1)
     
-def drawTriangle(c, x, y, w, h, d, color):    
-    c.setFillColor(HexColor(color))
-    p = c.beginPath()
-    if d == 0:                    #hexagonal right under
-        p.moveTo(x, y - h)
-        p.lineTo(x + w, y - h)
-        p.lineTo(x + w, y)
-        p.lineTo(x, y - h)
-    if d == 1:                    #hexagonal left under
-        p.moveTo(x, y - h)
-        p.lineTo(x - w, y - h)
-        p.lineTo(x - w, y)
-        p.lineTo(x, y - h)
-    if d == 2:                    #hexagonal left above
-        p.moveTo(x - w, y)
-        p.lineTo(x - w, y + h)
-        p.lineTo(x, y + h)
-        p.lineTo(x - w, y)
-    if d == 3:                    #hexagonal right above
-        p.moveTo(x, y + h)
-        p.lineTo(x + w, y + h)
-        p.lineTo(x + w, y)
-        p.lineTo(x, y + h)
-    c.drawPath(p, stroke = 0, fill = 1)
+def drawTriangle(d, x, y, w, h, o, color):
+    d.add(Rect(50, 50, 300, 100, fillColor = yellow))
+    
+def drawHexagon(d, x, y, s, color):
+    drawTriangle(d, x, y, s, s, 0, color)
+    drawTriangle(d, x, y, s, s, 1, color)
+    drawTriangle(d, x, y, s, s, 2, color)
+    drawTriangle(d, x, y, s, s, 3, color)
+    return
     
 def scaleSVG(svgfile, scaling_factor):
     svg_root = load_svg_file(svgfile)
@@ -115,6 +100,7 @@ avatars = 0.04
 
 d = Drawing(297*mm, 210*mm)
 d.add(transform_svg("Photos/BobMarley.svg", 20, 20, avatars, avatars))
+drawHexagon(d, 50, 50, 10, yellowbackground)
 renderPDF.drawToFile(d, 'PDF/ReggaeDrawing.pdf')
 
 key = input("Wait")
