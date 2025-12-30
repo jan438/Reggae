@@ -30,7 +30,7 @@ yellowbackground = "#ffde22"
 class MyLogo(_Symbol):
     def __init__(self):
         self.x = 215
-        self.y = 780
+        self.y = 380
         self.size = 100
         self.fillColor = colors.blue
 
