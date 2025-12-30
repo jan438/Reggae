@@ -111,7 +111,7 @@ pdfmetrics.registerFont(TTFont('CormorantGaramondBoldItalic', 'CormorantGaramond
 A4_width = A4[0]
 A4_height = A4[1]
 
-c = Canvas("PDF/Reggae.pdf", pagesize=landscape(A4))
+c = Canvas("PDF/ReggaeCanvas.pdf", pagesize=landscape(A4))
 c.drawImage("Photos/Example.png", 200, 100, width = 115, height = 76, mask='auto')
 gimg = transform_svg("Photos/BobMarley.svg", 300, 300, 0.5 , 0.5)
 print("gimp", gimg)
