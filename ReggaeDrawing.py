@@ -111,8 +111,10 @@ pdfmetrics.registerFont(TTFont('CormorantGaramondBoldItalic', 'CormorantGaramond
 A4_width = A4[0]
 A4_height = A4[1]
 
+avatars = 0.04
+
 d = Drawing(297*mm, 210*mm)
-d.add(transform_svg("Photos/BobMarley.svg", 20, 20, 100, 100))
+d.add(transform_svg("Photos/BobMarley.svg", 20, 20, avatars, avatars))
 renderPDF.drawToFile(d, 'PDF/ReggaeDrawing.pdf')
 
 key = input("Wait")
