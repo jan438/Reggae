@@ -42,6 +42,12 @@ class Hexagon(_Symbol):
                strokeColor = self.strokeColor,
                strokeWidth = 5)
         g.add(triangle1)
+        triangle2 = shapes.Polygon(
+        points=[self.x + 15.0, self.y + 22.0, self.x + 48.0, self.y + 36.0, self.x + 60.0, self.y + 90.0],
+               fillColor = self.fillColor,
+               strokeColor = self.strokeColor,
+               strokeWidth = 5)
+        g.add(triangle2)
         return g
         
 def drawRect(c, x, y, w, h, a, color):    
