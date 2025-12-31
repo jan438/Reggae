@@ -69,8 +69,8 @@ class Hexagon(_Symbol):
         self.y = self.y + 1.5 * s
         triangle4 = shapes.Polygon(
         points=[self.x, self.y,
-                self.x + 48.0, self.y + 36.0,
-                self.x + 60.0, self.y + 90.0],
+                self.x, self.y + 0.5 * s,
+                self.x - dx, self.y + 0.5 * s],
                fillColor = self.fillColor,
                strokeColor = self.strokeColor,
                strokeWidth = 0)
