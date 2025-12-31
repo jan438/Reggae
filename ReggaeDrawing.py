@@ -87,6 +87,23 @@ class MyArc(_Symbol):
         mccurve4 = self.mycircle(300, 400, 100.0, 270, 36)
         g.add(mccurve4)
         return g
+
+class Hexagon(_Symbol):
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.fillColor = colors.blue
+        self.strokeColor = colors.purple
+
+    def draw(self):
+        g = shapes.Group()
+        triangle1 = shapes.Polygon(
+        points=[self.x + 1.0, self.y + 2.0, self.x + 40.0, self.y + 30.0, self.x + 60.0, self.y + 70.0],
+               fillColor = self.fillColor,
+               strokeColor = self.strokeColor,
+               strokeWidth = 5)
+        g.add(triangle1)
+        return g
         
 def drawRect(c, x, y, w, h, a, color):    
     c.setFillColor(HexColor(color))
@@ -165,8 +182,8 @@ drawHexagon(d, 50, 50, 10, yellowbackground)
 d.add(transform_svg("Photos/PeterTosh.svg", 80, 80, avatars, avatars))
 l = MyLogo()
 d.add(l)
-a = MyArc(115, 200)
-d.add(a)
+h = Hexagon(115, 200)
+d.add(h)
 renderPDF.drawToFile(d, 'PDF/ReggaeDrawing.pdf')
 
 
