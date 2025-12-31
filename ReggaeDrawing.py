@@ -31,7 +31,7 @@ class Hexagon(_Symbol):
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.fillColor = colors.blue
+        self.fillColor = HexColor(yellowbackground)
         self.strokeColor = colors.purple
 
     def draw(self):
