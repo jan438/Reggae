@@ -76,20 +76,6 @@ class Hexagon(_Symbol):
                strokeWidth = 0)
         g.add(triangle4)
         return g
-        
-def drawRect(c, x, y, w, h, a, color):    
-    c.setFillColor(HexColor(color))
-    p = c.beginPath()
-    p.moveTo(x, y + 0.5 * a)
-    p.arcTo(x, y, x + a, y + a, startAng = 180, extent = 90)  # arc left below
-    p.lineTo(x + w, y)                                                           # horizontal line
-    p.arcTo(x + w, y, x + w + a, y + a, startAng = 270, extent = 90)  # arc right below
-    p.lineTo(x + w + a, y + h)                                                      # vertcal line
-    p.arcTo(x + w, y + h, x + w + a, y + h + a, startAng = 0, extent = 90)     # arc right above
-    p.lineTo(x + 0.5 * a, y + h + a)                                                   # horizontal line
-    p.arcTo(x, y + h, x + a, y + h + a, startAng = 90, extent = 90)    # arc left above
-    p.lineTo(x, y + 0.5 * a)                                                                # vertcal line
-    c.drawPath(p, stroke = 0, fill = 1)
     
 def scaleSVG(svgfile, scaling_factor):
     svg_root = load_svg_file(svgfile)
