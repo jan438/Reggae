@@ -36,11 +36,12 @@ class Hexagon(_Symbol):
 
     def draw(self):
         s = 80
+        dx = math.sqrt(s**2 - 0.5 * s**2)
         g = shapes.Group()
         triangle1 = shapes.Polygon(
         points=[self.x, self.y,
                 self.x, self.y + 0.5 * s,
-                self.x + math.sqrt(s**2 - 0.5 * s**2), self.y + 0.5 * s],
+                self.x + dx, self.y + 0.5 * s],
                fillColor = self.fillColor,
                strokeColor = self.strokeColor,
                strokeWidth = 0)
@@ -49,17 +50,17 @@ class Hexagon(_Symbol):
         triangle2 = shapes.Polygon(
         points=[self.x, self.y,
                 self.x, self.y - 0.5 * s,
-                self.x + math.sqrt(s**2 - 0.5 * s**2), self.y - 0.5 * s],
+                self.x + dx, self.y - 0.5 * s],
                fillColor = self.fillColor,
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle2)
-        self.x = self.x + math.sqrt(s**2 - 0.5 * s**2)    # te verwijderen
+        self.x = self.x + dx
         self.y = self.y - 0.5 * s
         triangle3 = shapes.Polygon(
         points=[self.x, self.y,
-                self.x + math.sqrt(s**2 - 0.5 * s**2), self.y,
-                self.x + math.sqrt(s**2 - 0.5 * s**2), self.y + 0.5 * s],
+                self.x + dx, self.y,
+                self.x + dx, self.y + 0.5 * s],
                fillColor = self.fillColor,
                strokeColor = self.strokeColor,
                strokeWidth = 0)
