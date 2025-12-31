@@ -45,15 +45,16 @@ class Hexagon(_Symbol):
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle1)
-        self.y = self.y + 80 # te verwijderen
+        self.y = self.y - s    # te verwijderen
         triangle2 = shapes.Polygon(
-        points=[self.x + 15.0, self.y + 22.0,
-                self.x + 48.0, self.y + 36.0,
-                self.x + 60.0, self.y + 90.0],
+        points=[self.x, self.y,
+                self.x, self.y - 0.5 * s,
+                self.x + math.sqrt(s**2 - 0.5 * s**2), self.y - 0.5 * s],
                fillColor = self.fillColor,
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle2)
+        self.y = self.y - 0.5 * s    # te verwijderen
         triangle3 = shapes.Polygon(
         points=[self.x + 1.0, self.y + 2.0,
                 self.x + 40.0, self.y + 30.0,
@@ -136,7 +137,7 @@ avatars = 0.1
 d = Drawing(297*mm, 210*mm)
 d.add(transform_svg("Photos/BobMarley.svg", 200, 200, avatars, avatars))
 d.add(transform_svg("Photos/PeterTosh.svg", 80, 80, avatars, avatars))
-h = Hexagon(115, 300)
+h = Hexagon(115, 400)
 d.add(h)
 renderPDF.drawToFile(d, 'PDF/ReggaeDrawing.pdf')
 
