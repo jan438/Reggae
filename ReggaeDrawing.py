@@ -38,7 +38,9 @@ class Hexagon(_Symbol):
         s = 40
         g = shapes.Group()
         triangle1 = shapes.Polygon(
-        points=[self.x + 1.0, self.y + s, self.x + 40.0, self.y + 30.0, self.x + 60.0, self.y + 70.0],
+        points=[self.x - s, self.y + s,
+                self.x - s, self.y + 30.0,
+                self.x - s +  60.0, self.y + 70.0],
                fillColor = self.fillColor,
                strokeColor = self.strokeColor,
                strokeWidth = 0)
@@ -48,19 +50,19 @@ class Hexagon(_Symbol):
                fillColor = self.fillColor,
                strokeColor = self.strokeColor,
                strokeWidth = 0)
-        g.add(triangle2)
+        #g.add(triangle2)
         triangle3 = shapes.Polygon(
         points=[self.x + 1.0, self.y + 2.0, self.x + 40.0, self.y + 30.0, self.x + 260.0, self.y + 70.0],
                fillColor = self.fillColor,
                strokeColor = self.strokeColor,
                strokeWidth = 0)
-        g.add(triangle3)
+        #g.add(triangle3)
         triangle4 = shapes.Polygon(
         points=[self.x + 215.0, self.y + 22.0, self.x + 48.0, self.y + 36.0, self.x + 60.0, self.y + 90.0],
                fillColor = self.fillColor,
                strokeColor = self.strokeColor,
                strokeWidth = 0)
-        g.add(triangle4)
+        #g.add(triangle4)
         return g
         
 def drawRect(c, x, y, w, h, a, color):    
