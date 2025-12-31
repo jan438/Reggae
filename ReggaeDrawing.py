@@ -32,7 +32,7 @@ class Hexagon(_Symbol):
         self.x = x
         self.y = y
         self.fillColor = HexColor(yellowbackground)
-        self.strokeColor = colors.purple
+        self.strokeColor = HexColor(yellowbackground)
 
     def draw(self):
         s = 80
