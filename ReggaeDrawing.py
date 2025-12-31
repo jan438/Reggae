@@ -35,7 +35,7 @@ class Hexagon(_Symbol):
         self.strokeColor = colors.purple
 
     def draw(self):
-        s = 40
+        s = 80
         g = shapes.Group()
         triangle1 = shapes.Polygon(
         points=[self.x, self.y,
@@ -45,6 +45,7 @@ class Hexagon(_Symbol):
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle1)
+        self.y = self.y + 80 # te verwijderen
         triangle2 = shapes.Polygon(
         points=[self.x + 15.0, self.y + 22.0,
                 self.x + 48.0, self.y + 36.0,
