@@ -27,25 +27,6 @@ from reportlab.graphics.charts.textlabels import Label
 
 yellowbackground = "#ffde22"
 
-class MyLogo(_Symbol):
-    def __init__(self):
-        self.x = 215
-        self.y = 380
-        self.size = 100
-        self.fillColor = colors.blue
-
-    def draw(self):
-        g = shapes.Group()
-        g.add(Circle(self.x + 9, self.y + 20, 26, fillColor = "#FEDDB9"))
-        lab = Label()
-        lab.setOrigin(self.x - 7, self.y + 40)
-        lab.boxAnchor = 'ne'
-        lab.angle = 45
-        lab.boxStrokeColor = colors.black
-        lab.setText("abc")
-        g.add(lab)
-        return g
-        
 class MyArc(_Symbol):
     def __init__(self, x, y):
         self.x = x
@@ -180,8 +161,6 @@ d = Drawing(297*mm, 210*mm)
 d.add(transform_svg("Photos/BobMarley.svg", 200, 200, avatars, avatars))
 drawHexagon(d, 50, 50, 10, yellowbackground)
 d.add(transform_svg("Photos/PeterTosh.svg", 80, 80, avatars, avatars))
-l = MyLogo()
-d.add(l)
 h = Hexagon(115, 200)
 d.add(h)
 renderPDF.drawToFile(d, 'PDF/ReggaeDrawing.pdf')
