@@ -45,7 +45,7 @@ class Hexagon(_Symbol):
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle1)
-        self.y = self.y - s    # te verwijderen
+        self.y = self.y - s
         triangle2 = shapes.Polygon(
         points=[self.x, self.y,
                 self.x, self.y - 0.5 * s,
@@ -54,10 +54,11 @@ class Hexagon(_Symbol):
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle2)
-        self.y = self.y - 0.5 * s    # te verwijderen
+        self.x = self.x + math.sqrt(s**2 - 0.5 * s**2)    # te verwijderen
+        self.y = self.y - 0.5 * s
         triangle3 = shapes.Polygon(
-        points=[self.x + 1.0, self.y + 2.0,
-                self.x + 40.0, self.y + 30.0,
+        points=[self.x, self.y,
+                self.x + math.sqrt(s**2 - 0.5 * s**2), self.y,
                 self.x + 260.0, self.y + 70.0],
                fillColor = self.fillColor,
                strokeColor = self.strokeColor,
