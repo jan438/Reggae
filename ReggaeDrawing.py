@@ -127,7 +127,7 @@ avatars = 0.1
 d = Drawing(297*mm, 210*mm)
 d.add(transform_svg("Photos/BobMarley.svg", 200, 200, avatars, avatars))
 d.add(transform_svg("Photos/PeterTosh.svg", 80, 80, avatars, avatars))
-h = Hexagon(115, 200)
+h = Hexagon(115, 300)
 d.add(h)
 renderPDF.drawToFile(d, 'PDF/ReggaeDrawing.pdf')
 
