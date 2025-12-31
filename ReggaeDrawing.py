@@ -39,8 +39,8 @@ class Hexagon(_Symbol):
         g = shapes.Group()
         triangle1 = shapes.Polygon(
         points=[self.x - s, self.y,
-                self.x - s, self.y + 30.0,
-                self.x - s + 30, self.y + 30.0],
+                self.x - s, self.y + 0.5 * s,
+                self.x - s + math.sqrt(s**2 - 0.5 * s**2), self.y + 0.5 * s],
                fillColor = self.fillColor,
                strokeColor = self.strokeColor,
                strokeWidth = 0)
