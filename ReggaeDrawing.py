@@ -100,16 +100,6 @@ def drawRect(c, x, y, w, h, a, color):
     p.lineTo(x, y + 0.5 * a)                                                                # vertcal line
     c.drawPath(p, stroke = 0, fill = 1)
     
-def drawTriangle(d, x, y, w, h, o, color):
-    d.add(Rect(50, 50, 300, 100, fillColor = yellow))
-    
-def drawHexagon(d, x, y, s, color):
-    drawTriangle(d, x, y, s, s, 0, color)
-    drawTriangle(d, x, y, s, s, 1, color)
-    drawTriangle(d, x, y, s, s, 2, color)
-    drawTriangle(d, x, y, s, s, 3, color)
-    return
-    
 def scaleSVG(svgfile, scaling_factor):
     svg_root = load_svg_file(svgfile)
     svgRenderer = SvgRenderer(svgfile)
@@ -159,7 +149,6 @@ avatars = 0.1
 
 d = Drawing(297*mm, 210*mm)
 d.add(transform_svg("Photos/BobMarley.svg", 200, 200, avatars, avatars))
-drawHexagon(d, 50, 50, 10, yellowbackground)
 d.add(transform_svg("Photos/PeterTosh.svg", 80, 80, avatars, avatars))
 h = Hexagon(115, 200)
 d.add(h)
