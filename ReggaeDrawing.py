@@ -144,7 +144,7 @@ class Hexagon3(_Symbol):
         g.add(mcircle)
         dx = 0.5 * s
         dy = math.sqrt(s**2 - 0.5 * s**2)
-        x1 = self.x - dx - dy
+        x1 = self.x - dx - 0.5 * dy
         y1 = self.y
         triangle1 = shapes.Polygon(
         points=[x1, y1,
