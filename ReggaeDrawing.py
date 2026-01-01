@@ -137,10 +137,11 @@ class Hexagon3(_Symbol):
     def draw(self):
         s = 80
         g = shapes.Group()
-        mcircle = shapes.Circle(self.x, self.y, 5, 
-                  fillColor = self.fillColor,
-                  strokeColor = self.strokeColor,
-                  strokeWidth = 0)
+        mcircle = shapes.Circle(self.x, self.y, 25, 
+                  fillColor = blue,
+                  strokeColor = blue,
+                  strokeWidth = 1)
+        g.add(mcircle)
         dx = 0.5 * s
         dy = math.sqrt(s**2 - 0.5 * s**2)
         x1 = self.x - dx - dy
