@@ -154,8 +154,8 @@ class Hexagon3(_Symbol):
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle1)
-        x2 = x1
-        y2 = y1
+        x2 = self.x - dx - 0.5 * dy
+        y2 = self.y
         triangle2 = shapes.Polygon(
         points=[x2, y2,
                 x2, y2 - dy,
