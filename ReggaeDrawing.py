@@ -87,8 +87,8 @@ class Hexagon2(_Symbol):
 
     def draw(self):
         s = 80
-        dx = math.sqrt(s**2 - 0.5 * s**2)
-        dy = 0.5 * s
+        dx = 0.5 * s
+        dy = math.sqrt(s**2 - 0.5 * s**2)
         g = shapes.Group()
         triangle1 = shapes.Polygon(
         points=[self.x, self.y,
