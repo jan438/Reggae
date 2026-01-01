@@ -118,7 +118,7 @@ class Hexagon2(_Symbol):
         g.add(triangle3)
         self.y = self.y + dy
         triangle4 = shapes.Polygon(
-        points=[self.x, self.y,
+        points=[self.x, self.y + dy,
                 self.x + dx, self.y,
                 self.x + dx, self.y + dy],
                fillColor = self.fillColor,
