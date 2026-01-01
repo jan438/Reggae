@@ -136,18 +136,21 @@ class Hexagon3(_Symbol):
 
     def draw(self):
         s = 80
-        x1 = self.x - 88
-        y1 = self.y + 88
+        g = shapes.Group()
+        mcircle = shapes.Circle(self.x, self.y, 5, 
+                  fillColor = self.fillColor,
+                  strokeColor = self.strokeColor,
+                  strokeWidth = 0)
         dx = 0.5 * s
         dy = math.sqrt(s**2 - 0.5 * s**2)
-        g = shapes.Group()
+        x1 = self.x - dx - dy
+        y1 = self.y
         triangle1 = shapes.Polygon(
         points=[x1, y1,
                 x1, y1 + dy,
                 x1 + dx, y1 + dy],
                fillColor = self.fillColor,
                strokeColor = self.strokeColor,
-
                strokeWidth = 0)
         g.add(triangle1)
         return g
