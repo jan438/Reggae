@@ -27,7 +27,7 @@ from reportlab.graphics.charts.textlabels import Label
 
 yellowbackground = "#ffde22"
 
-class Hexagon(_Symbol):
+class Hexagon1(_Symbol):
     def __init__(self, x, y):
         self.x = x
         self.y = y
@@ -128,7 +128,7 @@ avatars = 0.1
 d = Drawing(297*mm, 210*mm)
 d.add(transform_svg("Photos/BobMarley.svg", 200, 200, avatars, avatars))
 d.add(transform_svg("Photos/PeterTosh.svg", 80, 80, avatars, avatars))
-h = Hexagon(115, 400)
+h = Hexagon1(115, 400)
 d.add(h)
 renderPDF.drawToFile(d, 'PDF/ReggaeDrawing.pdf')
 
