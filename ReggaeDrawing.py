@@ -137,7 +137,7 @@ class Hexagon3(_Symbol):
     def draw(self):
         s = 80
         g = shapes.Group()
-        mcircle = shapes.Circle(self.x, self.y, 25, 
+        mcircle = shapes.Circle(self.x, self.y, 2, 
                   fillColor = blue,
                   strokeColor = blue,
                   strokeWidth = 1)
