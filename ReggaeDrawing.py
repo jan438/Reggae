@@ -129,21 +129,22 @@ class Hexagon2(_Symbol):
         
 class Hexagon3(_Symbol):
     def __init__(self, x, y):
-        self.x = x
+        self.x = x     # middle point
         self.y = y
-
         self.fillColor = HexColor(yellowbackground)
         self.strokeColor = HexColor(yellowbackground)
 
     def draw(self):
         s = 80
+        x1 = self.x - 88
+        y1 = self.y + 88
         dx = 0.5 * s
         dy = math.sqrt(s**2 - 0.5 * s**2)
         g = shapes.Group()
         triangle1 = shapes.Polygon(
-        points=[self.x, self.y,
-                self.x, self.y + dy,
-                self.x + dx, self.y + dy],
+        points=[x1, y1,
+                x1, y1 + dy,
+                x1 + dx, y1 + dy],
                fillColor = self.fillColor,
                strokeColor = self.strokeColor,
 
@@ -205,7 +206,7 @@ h = Hexagon1(115, 400)
 d.add(h)
 h = Hexagon2(115, 200)
 d.add(h)
-h = Hexagon3(250, 400)
+h = Hexagon3(350, 400)
 d.add(h)
 renderPDF.drawToFile(d, 'PDF/ReggaeDrawing.pdf')
 
