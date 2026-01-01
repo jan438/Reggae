@@ -77,6 +77,28 @@ class Hexagon1(_Symbol):
                strokeWidth = 0)
         g.add(triangle4)
         return g
+        
+class Hexagon2(_Symbol):
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.fillColor = HexColor(yellowbackground)
+        self.strokeColor = HexColor(yellowbackground)
+
+    def draw(self):
+        s = 80
+        dx = math.sqrt(s**2 - 0.5 * s**2)
+        dy = 0.5 * s
+        g = shapes.Group()
+        triangle1 = shapes.Polygon(
+        points=[self.x, self.y,
+                self.x, self.y + dy,
+                self.x + dx, self.y + dy],
+               fillColor = self.fillColor,
+               strokeColor = self.strokeColor,
+               strokeWidth = 0)
+        g.add(triangle1)
+        return g
     
 def scaleSVG(svgfile, scaling_factor):
     svg_root = load_svg_file(svgfile)
@@ -126,9 +148,11 @@ A4_height = A4[1]
 avatars = 0.1
 
 d = Drawing(297*mm, 210*mm)
-d.add(transform_svg("Photos/BobMarley.svg", 200, 200, avatars, avatars))
-d.add(transform_svg("Photos/PeterTosh.svg", 80, 80, avatars, avatars))
+d.add(transform_svg("Photos/BobMarley.svg", 300, 200, avatars, avatars))
+d.add(transform_svg("Photos/PeterTosh.svg", 380, 100, avatars, avatars))
 h = Hexagon1(115, 400)
+d.add(h)
+h = Hexagon2(115, 200)
 d.add(h)
 renderPDF.drawToFile(d, 'PDF/ReggaeDrawing.pdf')
 
