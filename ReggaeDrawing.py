@@ -98,6 +98,14 @@ class Hexagon2(_Symbol):
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle1)
+        triangle2 = shapes.Polygon(
+        points=[self.x, self.y,
+                self.x, self.y - dy,
+                self.x + dx, self.y - dy],
+               fillColor = self.fillColor,
+               strokeColor = self.strokeColor,
+               strokeWidth = 0)
+        g.add(triangle2)
         return g
     
 def scaleSVG(svgfile, scaling_factor):
