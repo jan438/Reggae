@@ -39,11 +39,11 @@ class Hexagon(_Symbol):
     def draw(self):
         s = 80
         g = shapes.Group()
-        mcircle = shapes.Circle(self.x, self.y, 2, 
-                  fillColor = blue,
-                  strokeColor = blue,
-                  strokeWidth = 1)
-        g.add(mcircle)
+        #mcircle = shapes.Circle(self.x, self.y, 2, 
+        #          fillColor = blue,
+        #          strokeColor = blue,
+        #          strokeWidth = 1)
+        #g.add(mcircle)
         dx = 0.5 * s
         dy = math.sqrt(s**2 - 0.5 * s**2)
         xl = self.x - dx - 0.5 * dy
@@ -85,8 +85,6 @@ class Hexagon(_Symbol):
 def drawLegend(d, i):
     img = "Photos/Posters/" + legendsdata[i][0] + ".jpg"
     d.add(Image(path = img, width = 137, height = 159, x = float(legendsdata[i][1]) - 69.0, y = float(legendsdata[i][2]) - 100, mask = None))
-    mcircle = shapes.Circle(float(legendsdata[i][1]), float(legendsdata[i][2]), 20, fillColor = red, strokeColor = red, strokeWidth = 1)
-    d.add(mcircle)
     h = Hexagon(float(legendsdata[i][1]), float(legendsdata[i][2]))
     d.add(h)
     return  
