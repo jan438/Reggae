@@ -45,41 +45,37 @@ class Hexagon(_Symbol):
         dx = 0.5 * s
         dy = math.sqrt(s**2 - 0.5 * s**2)
         x1 = self.x - dx - 0.5 * dy
-        y1 = self.y
         triangle1 = shapes.Polygon(
-        points=[x1, y1,
-                x1, y1 + dy,
-                x1 + dx, y1 + dy],
+        points=[x1, self.y,
+                x1, self.y + dy,
+                x1 + dx, self.y + dy],
                fillColor = self.fillColor,
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle1)
         x2 = self.x - dx - 0.5 * dy
-        y2 = self.y
         triangle2 = shapes.Polygon(
-        points=[x2, y2,
-                x2, y2 - dy,
-                x2 + dx, y2 - dy],
+        points=[x2, self.y,
+                x2, self.y - dy,
+                x2 + dx, self.y - dy],
                fillColor = self.fillColor,
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle2)
         x3 = self.x + dx + 0.5 * dy
-        y3 = self.y
         triangle3 = shapes.Polygon(
-        points=[x3, y3,
-                x3, y3 - dy,
-                x3 - dx, y3 - dy],
+        points=[x3, self.y,
+                x3, self.y - dy,
+                x3 - dx, self.y - dy],
                fillColor = self.fillColor,
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle3)
         x4 = self.x + dx + 0.5 * dy
-        y4 = self.y
         triangle4 = shapes.Polygon(
-        points=[x4, y4,
-                x4, y4 + dy,
-                x4 - dx, y4 + dy],
+        points=[x4, self.y,
+                x4, self.y + dy,
+                x4 - dx, self.y + dy],
                fillColor = self.fillColor,
                strokeColor = self.strokeColor,
                strokeWidth = 0)
@@ -138,6 +134,7 @@ d.add(transform_svg("Photos/BobMarley.svg", 300, 200, avatars, avatars))
 d.add(transform_svg("Photos/PeterTosh.svg", 380, 100, avatars, avatars))
 h = Hexagon(350, 400)
 d.add(h)
+
 renderPDF.drawToFile(d, 'PDF/ReggaeLegends.pdf')
 
 key = input("Wait")
