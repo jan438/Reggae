@@ -44,38 +44,36 @@ class Hexagon(_Symbol):
         g.add(mcircle)
         dx = 0.5 * s
         dy = math.sqrt(s**2 - 0.5 * s**2)
-        x1 = self.x - dx - 0.5 * dy
+        xl = self.x - dx - 0.5 * dy
+        xr = self.x + dx + 0.5 * dy
         triangle1 = shapes.Polygon(
-        points=[x1, self.y,
-                x1, self.y + dy,
-                x1 + dx, self.y + dy],
+        points=[xl, self.y,
+                xl, self.y + dy,
+                xl + dx, self.y + dy],
                fillColor = self.fillColor,
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle1)
-        x2 = self.x - dx - 0.5 * dy
         triangle2 = shapes.Polygon(
-        points=[x2, self.y,
-                x2, self.y - dy,
-                x2 + dx, self.y - dy],
+        points=[xl, self.y,
+                xl, self.y - dy,
+                xl + dx, self.y - dy],
                fillColor = self.fillColor,
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle2)
-        x3 = self.x + dx + 0.5 * dy
         triangle3 = shapes.Polygon(
-        points=[x3, self.y,
-                x3, self.y - dy,
-                x3 - dx, self.y - dy],
+        points=[xr, self.y,
+                xr, self.y - dy,
+                xr - dx, self.y - dy],
                fillColor = self.fillColor,
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle3)
-        x4 = self.x + dx + 0.5 * dy
         triangle4 = shapes.Polygon(
-        points=[x4, self.y,
-                x4, self.y + dy,
-                x4 - dx, self.y + dy],
+        points=[xr, self.y,
+                xr, self.y + dy,
+                xr - dx, self.y + dy],
                fillColor = self.fillColor,
                strokeColor = self.strokeColor,
                strokeWidth = 0)
