@@ -148,7 +148,7 @@ A4_height = A4[1]
 avatars = 0.1
 
 d = Drawing(297*mm, 210*mm)
-d.add(transform_svg("Photos/BobMarley.svg", 300, 200, avatars, avatars))
+d.add(transform_svg("Photos/BobMarley.svg", 275, 100, avatars, avatars))
 d.add(transform_svg("Photos/PeterTosh.svg", 380, 100, avatars, avatars))
 for i in range(len(legendsdata)):
     drawLegend(d, i)
