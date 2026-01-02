@@ -149,6 +149,9 @@ d.add(transform_svg("Photos/PeterTosh.svg", 380, 100, avatars, avatars))
 for i in range(len(legendsdata)):
     drawLegend(i)
 
+img = "Photos/Posters/PeterTosh.jpg"
+d.add(Image(path = img, width = 27, height = 27, x = 188, y = 125, mask = None))
+
 renderPDF.drawToFile(d, 'PDF/ReggaeLegends.pdf')
 
 key = input("Wait")
