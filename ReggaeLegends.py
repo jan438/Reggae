@@ -1,6 +1,7 @@
 import os
 import sys
 import math
+import csv
 import unicodedata
 from pathlib import Path
 from datetime import datetime, date, timedelta
@@ -26,6 +27,7 @@ from reportlab.graphics.widgets.signsandsymbols import _Symbol
 from reportlab.graphics.charts.textlabels import Label
 
 yellowbackground = "#ffde22"
+legendsdata = []
 
 class Hexagon(_Symbol):
     def __init__(self, x, y):
@@ -121,6 +123,15 @@ pdfmetrics.registerFont(TTFont('CormorantGaramond', 'CormorantGaramond-Regular.t
 pdfmetrics.registerFont(TTFont('CormorantGaramondBold', 'CormorantGaramond-Bold.ttf'))
 pdfmetrics.registerFont(TTFont('CormorantGaramondItalic', 'CormorantGaramond-Italic.ttf'))
 pdfmetrics.registerFont(TTFont('CormorantGaramondBoldItalic', 'CormorantGaramond-BoldItalic.ttf'))
+
+file_to_open = "Data/ReggaeLegends.csv"
+with open(file_to_open, 'r') as file:
+    csvreader = csv.reader(file, delimiter = ';')
+    count = 0
+    for row in csvreader:
+        legendsdata.append(row)
+        count += 1
+print("Count csv", count)
 
 A4_width = A4[0]
 A4_height = A4[1]
