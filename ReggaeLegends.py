@@ -151,6 +151,8 @@ for i in range(len(legendsdata)):
 
 img = "Photos/Posters/PeterTosh.jpg"
 d.add(Image(path = img, width = 120, height = 159, x = float(legendsdata[1][1]), y = float(legendsdata[1][2]), mask = None))
+mcircle = shapes.Circle(float(legendsdata[1][1]), float(legendsdata[1][2]), 20, fillColor = red, strokeColor = red, strokeWidth = 1)
+d.add(mcircle)
 
 renderPDF.drawToFile(d, 'PDF/ReggaeLegends.pdf')
 
