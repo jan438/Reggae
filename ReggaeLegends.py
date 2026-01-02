@@ -85,7 +85,7 @@ class Hexagon(_Symbol):
 def drawLegend(i):
     h = Hexagon(350, 400)
     d.add(h)
-    print(legendsdata[i][1], legendsdata[i][2])
+    print(float(legendsdata[i][1]), float(legendsdata[i][2]))
     return  
     
 def scaleSVG(svgfile, scaling_factor):
