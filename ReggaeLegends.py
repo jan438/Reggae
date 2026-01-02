@@ -83,7 +83,7 @@ class Hexagon(_Symbol):
         return g
         
 def drawLegend(i):
-    h = Hexagon(350, 400)
+    h = Hexagon(float(legendsdata[i][1]), float(legendsdata[i][2]))
     d.add(h)
     print(float(legendsdata[i][1]), float(legendsdata[i][2]))
     return  
