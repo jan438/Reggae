@@ -27,107 +27,7 @@ from reportlab.graphics.charts.textlabels import Label
 
 yellowbackground = "#ffde22"
 
-class Hexagon1(_Symbol):
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-        self.fillColor = HexColor(yellowbackground)
-        self.strokeColor = HexColor(yellowbackground)
-
-    def draw(self):
-        s = 80
-        dx = math.sqrt(s**2 - 0.5 * s**2)
-        dy = 0.5 * s
-        g = shapes.Group()
-        triangle1 = shapes.Polygon(
-        points=[self.x, self.y,
-                self.x, self.y + dy,
-                self.x + dx, self.y + dy],
-               fillColor = self.fillColor,
-               strokeColor = self.strokeColor,
-               strokeWidth = 0)
-        g.add(triangle1)
-        self.y = self.y - s
-        triangle2 = shapes.Polygon(
-        points=[self.x, self.y,
-                self.x, self.y - dy,
-                self.x + dx, self.y - dy],
-               fillColor = self.fillColor,
-               strokeColor = self.strokeColor,
-               strokeWidth = 0)
-        g.add(triangle2)
-        self.x = self.x + dx
-        self.y = self.y - 0.5 * s
-        triangle3 = shapes.Polygon(
-        points=[self.x, self.y,
-                self.x + dx, self.y,
-                self.x + dx, self.y + dy],
-               fillColor = self.fillColor,
-               strokeColor = self.strokeColor,
-               strokeWidth = 0)
-        g.add(triangle3)
-        self.x = self.x + dx
-        self.y = self.y + 1.5 * s
-        triangle4 = shapes.Polygon(
-        points=[self.x, self.y,
-                self.x, self.y + dy,
-                self.x - dx, self.y + dy],
-               fillColor = self.fillColor,
-               strokeColor = self.strokeColor,
-               strokeWidth = 0)
-        g.add(triangle4)
-        return g
-        
-class Hexagon2(_Symbol):
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-        self.fillColor = HexColor(yellowbackground)
-        self.strokeColor = HexColor(yellowbackground)
-
-    def draw(self):
-        s = 80
-        dx = 0.5 * s
-        dy = math.sqrt(s**2 - 0.5 * s**2)
-        g = shapes.Group()
-        triangle1 = shapes.Polygon(
-        points=[self.x, self.y,
-                self.x, self.y + dy,
-                self.x + dx, self.y + dy],
-               fillColor = self.fillColor,
-               strokeColor = self.strokeColor,
-               strokeWidth = 0)
-        g.add(triangle1)
-        triangle2 = shapes.Polygon(
-        points=[self.x, self.y,
-                self.x, self.y - dy,
-                self.x + dx, self.y - dy],
-               fillColor = self.fillColor,
-               strokeColor = self.strokeColor,
-               strokeWidth = 0)
-        g.add(triangle2)
-        self.x = self.x + dy + dx
-        self.y = self.y - dy
-        triangle3 = shapes.Polygon(
-        points=[self.x, self.y,
-                self.x + dx, self.y,
-                self.x + dx, self.y + dy],
-               fillColor = self.fillColor,
-               strokeColor = self.strokeColor,
-               strokeWidth = 0)
-        g.add(triangle3)
-        self.y = self.y + dy
-        triangle4 = shapes.Polygon(
-        points=[self.x, self.y + dy,
-                self.x + dx, self.y,
-                self.x + dx, self.y + dy],
-               fillColor = self.fillColor,
-               strokeColor = self.strokeColor,
-               strokeWidth = 0)
-        g.add(triangle4)
-        return g
-        
-class Hexagon3(_Symbol):
+class Hexagon(_Symbol):
     def __init__(self, x, y):
         self.x = x     # middle point
         self.y = y
@@ -236,12 +136,8 @@ avatars = 0.1
 d = Drawing(297*mm, 210*mm)
 d.add(transform_svg("Photos/BobMarley.svg", 300, 200, avatars, avatars))
 d.add(transform_svg("Photos/PeterTosh.svg", 380, 100, avatars, avatars))
-h = Hexagon1(115, 400)
+h = Hexagon(350, 400)
 d.add(h)
-h = Hexagon2(115, 200)
-d.add(h)
-h = Hexagon3(350, 400)
-d.add(h)
-renderPDF.drawToFile(d, 'PDF/ReggaeDrawing.pdf')
+renderPDF.drawToFile(d, 'PDF/ReggaeLegends.pdf')
 
 key = input("Wait")
