@@ -82,7 +82,12 @@ class Hexagon(_Symbol):
         g.add(triangle4)
         return g
         
-def drawLegend(i):
+def drawLegend(d, i):
+
+    img = "Photos/Posters/PeterTosh.jpg"
+    d.add(Image(path = img, width = 120, height = 159, x = float(legendsdata[1][1]), y = float(legendsdata[1][2]), mask = None))
+    mcircle = shapes.Circle(float(legendsdata[1][1]), float(legendsdata[1][2]), 20, fillColor = red, strokeColor = red, strokeWidth = 1)
+    d.add(mcircle)
     h = Hexagon(float(legendsdata[i][1]), float(legendsdata[i][2]))
     d.add(h)
     return  
@@ -147,12 +152,7 @@ d = Drawing(297*mm, 210*mm)
 d.add(transform_svg("Photos/BobMarley.svg", 300, 200, avatars, avatars))
 d.add(transform_svg("Photos/PeterTosh.svg", 380, 100, avatars, avatars))
 for i in range(len(legendsdata)):
-    drawLegend(i)
-
-img = "Photos/Posters/PeterTosh.jpg"
-d.add(Image(path = img, width = 120, height = 159, x = float(legendsdata[1][1]), y = float(legendsdata[1][2]), mask = None))
-mcircle = shapes.Circle(float(legendsdata[1][1]), float(legendsdata[1][2]), 20, fillColor = red, strokeColor = red, strokeWidth = 1)
-d.add(mcircle)
+    drawLegend(d, i)
 
 renderPDF.drawToFile(d, 'PDF/ReggaeLegends.pdf')
 
