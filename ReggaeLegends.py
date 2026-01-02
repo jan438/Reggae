@@ -83,10 +83,9 @@ class Hexagon(_Symbol):
         return g
         
 def drawLegend(d, i):
-
     img = "Photos/Posters/PeterTosh.jpg"
-    d.add(Image(path = img, width = 120, height = 159, x = float(legendsdata[1][1]), y = float(legendsdata[1][2]), mask = None))
-    mcircle = shapes.Circle(float(legendsdata[1][1]), float(legendsdata[1][2]), 20, fillColor = red, strokeColor = red, strokeWidth = 1)
+    d.add(Image(path = img, width = 120, height = 159, x = float(legendsdata[i][1]), y = float(legendsdata[i][2]), mask = None))
+    mcircle = shapes.Circle(float(legendsdata[i][1]), float(legendsdata[i][2]), 20, fillColor = red, strokeColor = red, strokeWidth = 1)
     d.add(mcircle)
     h = Hexagon(float(legendsdata[i][1]), float(legendsdata[i][2]))
     d.add(h)
