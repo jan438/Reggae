@@ -81,6 +81,12 @@ class Hexagon(_Symbol):
                strokeWidth = 0)
         g.add(triangle4)
         return g
+        
+def drawLegend(i):
+    h = Hexagon(350, 400)
+    d.add(h)
+    print(legendsdata[i])
+    return  
     
 def scaleSVG(svgfile, scaling_factor):
     svg_root = load_svg_file(svgfile)
@@ -141,8 +147,7 @@ avatars = 0.1
 d = Drawing(297*mm, 210*mm)
 d.add(transform_svg("Photos/BobMarley.svg", 300, 200, avatars, avatars))
 d.add(transform_svg("Photos/PeterTosh.svg", 380, 100, avatars, avatars))
-h = Hexagon(350, 400)
-d.add(h)
+drawLegend(0)
 
 renderPDF.drawToFile(d, 'PDF/ReggaeLegends.pdf')
 
