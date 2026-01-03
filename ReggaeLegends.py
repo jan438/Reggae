@@ -64,6 +64,8 @@ class Hexagon(_Symbol):
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle2)
+        l1 = shapes.Line(xl, self.y + dy, xl + dx, self.y + dy, strokeColor = blue, strokeWidth = 5)
+        g.add(l1)
         triangle3 = shapes.Polygon(
         points=[xr, self.y,
                 xr, self.y - dy,
