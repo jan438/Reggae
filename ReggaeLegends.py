@@ -27,6 +27,8 @@ from reportlab.graphics.widgets.signsandsymbols import _Symbol
 from reportlab.graphics.charts.textlabels import Label
 
 yellowbackground = "#ffde22"
+yellowjamaica = "#fcea2b"
+greenjamaica = "#5c9e31"
 legendsdata = []
 s = 80
 dx = 0.5 * s
