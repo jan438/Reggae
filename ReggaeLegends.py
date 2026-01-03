@@ -64,9 +64,9 @@ class Hexagon(_Symbol):
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle2)
-        l1 = shapes.Line(xl, self.y, xl + dx, self.y + dy, strokeColor = blue, strokeWidth = 5, strokeLineCap = 1)
+        l1 = shapes.Line(xl, self.y, xl + dx, self.y + dy, strokeColor = white, strokeWidth = 5, strokeLineCap = 1)
         g.add(l1)
-        l2 = shapes.Line(xl, self.y, xl + dx, self.y - dy, strokeColor = blue, strokeWidth = 5, strokeLineCap = 1)
+        l2 = shapes.Line(xl, self.y, xl + dx, self.y - dy, strokeColor = white, strokeWidth = 5, strokeLineCap = 1)
         g.add(l2)
         triangle3 = shapes.Polygon(
         points=[xr, self.y,
@@ -84,13 +84,13 @@ class Hexagon(_Symbol):
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle4)
-        l3 = shapes.Line(xr, self.y, xr - dx, self.y + dy, strokeColor = blue, strokeWidth = 5, strokeLineCap = 1)
+        l3 = shapes.Line(xr, self.y, xr - dx, self.y + dy, strokeColor = white, strokeWidth = 5, strokeLineCap = 1)
         g.add(l3)
-        l4 = shapes.Line(xr, self.y, xr - dx, self.y - dy, strokeColor = blue, strokeWidth = 5, strokeLineCap = 1)
+        l4 = shapes.Line(xr, self.y, xr - dx, self.y - dy, strokeColor = white, strokeWidth = 5, strokeLineCap = 1)
         g.add(l4)
-        la = shapes.Line(xl + dx, self.y + dy, xr - dx, self.y + dy, strokeColor = blue, strokeWidth = 5, strokeLineCap = 1)
+        la = shapes.Line(xl + dx, self.y + dy, xr - dx, self.y + dy, strokeColor = white, strokeWidth = 5, strokeLineCap = 1)
         g.add(la)
-        lb = shapes.Line(xl + dx, self.y - dy, xr - dx, self.y - dy, strokeColor = blue, strokeWidth = 5, strokeLineCap = 1)
+        lb = shapes.Line(xl + dx, self.y - dy, xr - dx, self.y - dy, strokeColor = white, strokeWidth = 5, strokeLineCap = 1)
         g.add(lb)
         return g
         
@@ -157,7 +157,7 @@ print("Count csv", count)
 avatars = 0.1
 d = Drawing(A4[1], A4[0])
 bgrect = shapes.Rect(0, 0, A4[1], A4[0], fillColor = yellowbackground, strokeColor = yellowbackground, strokeWidth = 0)
-#d.add(bgrect)
+d.add(bgrect)
 d.add(transform_svg("Photos/BobMarley.svg", 275, 100, avatars, avatars))
 d.add(transform_svg("Photos/PeterTosh.svg", 380, 100, avatars, avatars))
 for i in range(len(legendsdata)):
