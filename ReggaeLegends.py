@@ -84,6 +84,10 @@ class Hexagon(_Symbol):
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle4)
+        l3 = shapes.Line(xr, self.y, xr - dx, self.y + dy, strokeColor = blue, strokeWidth = 5)
+        g.add(l3)
+        l4 = shapes.Line(xr, self.y, xr - dx, self.y - dy, strokeColor = blue, strokeWidth = 5)
+        g.add(l4)
         return g
         
 def drawLegend(d, i):
