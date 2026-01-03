@@ -29,6 +29,8 @@ from reportlab.graphics.charts.textlabels import Label
 yellowbackground = "#ffde22"
 legendsdata = []
 s = 80
+dx = 0.5 * s
+dy = math.sqrt(s**2 - (0.5 * s)**2)
 
 class Hexagon(_Symbol):
     def __init__(self, x, y):
@@ -44,8 +46,6 @@ class Hexagon(_Symbol):
         #          strokeColor = blue,
         #          strokeWidth = 1)
         #g.add(mcircle)
-        dx = 0.5 * s
-        dy = math.sqrt(s**2 - (0.5 * s)**2)
         xl = self.x - dx - 0.5 * dy
         xr = self.x + dx + 0.5 * dy
         triangle1 = shapes.Polygon(
@@ -83,8 +83,6 @@ class Hexagon(_Symbol):
         return g
         
 def drawLegend(d, i):
-    dx = 0.5 * s
-    dy = math.sqrt(s**2 - (0.5 * s)**2)
     img = "Photos/Posters/" + legendsdata[i][0] + ".jpg"
     d.add(Image(path = img, width = 149, height = 159, x = float(legendsdata[i][1]) - dx - 0.5 * dy, y = float(legendsdata[i][2]) - 100, mask = None))
     h = Hexagon(float(legendsdata[i][1]), float(legendsdata[i][2]))
