@@ -45,7 +45,7 @@ class Hexagon(_Symbol):
         #          strokeWidth = 1)
         #g.add(mcircle)
         dx = 0.5 * s
-        dy = math.sqrt(s**2 - 0.5 * s**2)
+        dy = math.sqrt(s**2 - (0.5 * s)**2)
         xl = self.x - dx - 0.5 * dy
         xr = self.x + dx + 0.5 * dy
         triangle1 = shapes.Polygon(
