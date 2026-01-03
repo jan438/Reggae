@@ -87,7 +87,7 @@ def drawLegend(d, i):
     img = "Photos/Posters/" + legendsdata[i][0] + ".jpg"
     d.add(Image(path = img, width = 149, height = 179, x = float(legendsdata[i][1]) - dx - 0.5 * dy, y = float(legendsdata[i][2]) - 110, mask = None))
     h = Hexagon(float(legendsdata[i][1]), float(legendsdata[i][2]))
-    bgrect = shapes.Rect(float(legendsdata[i][1]) - dx - 0.5 * dy, 0, 150, 150, fillColor = yellowbackground, strokeColor = yellowbackground, strokeWidth = 0)
+    bgrect = shapes.Rect(float(legendsdata[i][1]) - dx - 0.5 * dy, float(legendsdata[i][2]) - 180, 50, 50, fillColor = yellowbackground, strokeColor = yellowbackground, strokeWidth = 0)
     d.add(bgrect)
     d.add(h)
     return  
@@ -145,7 +145,7 @@ print("Count csv", count)
 avatars = 0.1
 d = Drawing(A4[1], A4[0])
 bgrect = shapes.Rect(0, 0, A4[1], A4[0], fillColor = yellowbackground, strokeColor = yellowbackground, strokeWidth = 0)
-d.add(bgrect)
+#d.add(bgrect)
 d.add(transform_svg("Photos/BobMarley.svg", 275, 100, avatars, avatars))
 d.add(transform_svg("Photos/PeterTosh.svg", 380, 100, avatars, avatars))
 for i in range(len(legendsdata)):
