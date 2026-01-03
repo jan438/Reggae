@@ -87,7 +87,7 @@ def drawLegend(d, i):
     img = "Photos/Posters/" + legendsdata[i][0] + ".jpg"
     d.add(Image(path = img, width = 149, height = 179, x = float(legendsdata[i][1]) - dx - 0.5 * dy, y = float(legendsdata[i][2]) - 110, mask = None))
     h = Hexagon(float(legendsdata[i][1]), float(legendsdata[i][2]))
-    bgrect = shapes.Rect(float(legendsdata[i][1]) - dx - 0.5 * dy, float(legendsdata[i][2]) - 180, 50, 50, fillColor = yellowbackground, strokeColor = yellowbackground, strokeWidth = 0)
+    bgrect = shapes.Rect(float(legendsdata[i][1]) - dx - 0.5 * dy, float(legendsdata[i][2]) - 110, 50, 50, fillColor = yellowbackground, strokeColor = yellowbackground, strokeWidth = 0)
     d.add(bgrect)
     d.add(h)
     return  
