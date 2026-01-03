@@ -28,6 +28,7 @@ from reportlab.graphics.charts.textlabels import Label
 
 yellowbackground = "#ffde22"
 legendsdata = []
+s = 80
 
 class Hexagon(_Symbol):
     def __init__(self, x, y):
@@ -37,7 +38,6 @@ class Hexagon(_Symbol):
         self.strokeColor = HexColor(yellowbackground)
 
     def draw(self):
-        s = 80
         g = shapes.Group()
         #mcircle = shapes.Circle(self.x, self.y, 2, 
         #          fillColor = blue,
