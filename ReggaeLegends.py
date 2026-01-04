@@ -32,7 +32,7 @@ greenjamaica = "#5c9e31"
 legendsdata = []
 s = 80
 dx = 0.5 * s
-dy = math.sqrt(s**2 - (0.5 * s)**2)
+dy = math.sqrt(s**2 - (0.5 * s)**2)  # sqrt(6400 - 1600) = 69.282
 
 # width = s + 2 * dx      1200
 # height = 2 * dy         ??? 1000 todo gimp crop in good ratio
