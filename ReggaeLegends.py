@@ -164,6 +164,7 @@ d.add(bgrect)
 d.add(transform_svg("Photos/BobMarley.svg", 275, 100, avatars, avatars))
 d.add(transform_svg("Photos/PeterTosh.svg", 380, 100, avatars, avatars))
 for i in range(len(legendsdata)):
+    print(i, legendsdata[i][6])
     drawLegend(d, i)
 
 renderPDF.drawToFile(d, 'PDF/ReggaeLegends.pdf')
