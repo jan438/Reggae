@@ -34,6 +34,9 @@ s = 80
 dx = 0.5 * s
 dy = math.sqrt(s**2 - (0.5 * s)**2)
 
+# width = s + 2 * dx      1200
+# height = 2 * dy         ??? 1000 todo gimp crop in good ratio
+
 class Hexagon(_Symbol):
     def __init__(self, x, y):
         self.x = x     # middle point
