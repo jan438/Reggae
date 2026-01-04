@@ -48,8 +48,8 @@ class Hexagon(_Symbol):
         #          strokeColor = blue,
         #          strokeWidth = 1)
         #g.add(mcircle)
-        xl = self.x - dx - 0.5 * dy
-        xr = self.x + dx + 0.5 * dy
+        xl = self.x - dx - 0.5 * s
+        xr = self.x + dx + 0.5 * s
         triangle1 = shapes.Polygon(
         points=[xl, self.y,
                 xl, self.y + dy,
