@@ -31,8 +31,8 @@ yellowjamaica = "#fcea2b"
 greenjamaica = "#5c9e31"
 legendsdata = []
 s = 80
-dx = 0.5 * s
-dy = math.sqrt(s**2 - (0.5 * s)**2)  # sqrt(6400 - 1600) = 69.282
+dx = 0.5 * s                         #                            width hexagon  160
+dy = math.sqrt(s**2 - (0.5 * s)**2)  # sqrt(6400 - 1600) = 69.282 height hexagon 138.564 ratio 1.154701077
 
 # width = s + 2 * dx      1200
 # height = 2 * dy         1039
@@ -102,7 +102,7 @@ class Hexagon(_Symbol):
 def drawLegend(d, i):
     # 1200 w 1588 h
     img = "Photos/Posters/" + legendsdata[i][0] + ".png"
-    d.add(Image(path = img, width = 159, height = 136, x = float(legendsdata[i][1]) - 5.0 - dx - 0.5 * dy, y = float(legendsdata[i][2]) - 68, mask = None))
+    d.add(Image(path = img, width = 159, height = 137, x = float(legendsdata[i][1]) - 5.0 - dx - 0.5 * dy, y = float(legendsdata[i][2]) - 68, mask = None))
     h = Hexagon(float(legendsdata[i][1]), float(legendsdata[i][2]))
     bgrect = shapes.Rect(float(legendsdata[i][1]) - dx - 0.5 * dy, float(legendsdata[i][2]) - 110, 149, 40, fillColor = yellowbackground, strokeColor = yellowbackground, strokeWidth = 0)
     #d.add(bgrect)
