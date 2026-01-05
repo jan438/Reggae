@@ -10,5 +10,7 @@ case tosh toots
 xhibbert = xtosh + dxs   330.0 + dxs = 490.0    dxs = 160 
 yhibbert = ytosh + dys   291.0 = dys = 360.282  dys = 69.282
 
-Peter Tosh;330.0;291.0;y;y;y;y;
-Toots Hibbert;490.0;360.282;y;y;y;y;
+case toots brown
+xbrown = xtoots + dxs   490.0 + 160 = 650
+ybrown = ytoots + dys   360.282 + 69.282 = 429.564
+
