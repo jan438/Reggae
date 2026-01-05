@@ -7,5 +7,8 @@
 6 rightabove
 
 case tosh toots
-xhibbert = xtosh + dx    dx = 40 + dx + dx = 80
-yhibbert = ytosh + dy    dy = 69.282
+xhibbert = xtosh + dxs   330.0 + dxs = 490.0    dxs = 160 
+yhibbert = ytosh + dys   291.0 = dys = 360.282  dys = 69.282
+
+Peter Tosh;330.0;291.0;y;y;y;y;
+Toots Hibbert;490.0;360.282;y;y;y;y;
