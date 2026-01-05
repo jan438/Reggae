@@ -102,7 +102,7 @@ class Hexagon(_Symbol):
 def drawLegend(d, i):
     # 1200 w 1588 h
     img = "Photos/Posters/" + legendsdata[i][0] + ".png"
-    d.add(Image(path = img, width = 155, height = 130, x = float(legendsdata[i][1]) - 2.0 - dx - 0.5 * dy, y = float(legendsdata[i][2]) - 65, mask = None))
+    d.add(Image(path = img, width = 156, height = 130, x = float(legendsdata[i][1]) - 2.0 - dx - 0.5 * dy, y = float(legendsdata[i][2]) - 65, mask = None))
     h = Hexagon(float(legendsdata[i][1]), float(legendsdata[i][2]))
     bgrect = shapes.Rect(float(legendsdata[i][1]) - dx - 0.5 * dy, float(legendsdata[i][2]) - 110, 149, 40, fillColor = yellowbackground, strokeColor = yellowbackground, strokeWidth = 0)
     #d.add(bgrect)
@@ -163,7 +163,7 @@ print("Count csv", count)
 avatars = 0.1
 d = Drawing(A4[1], A4[0])
 bgrect = shapes.Rect(0, 0, A4[1], A4[0], fillColor = yellowbackground, strokeColor = yellowbackground, strokeWidth = 0)
-d.add(bgrect)
+#d.add(bgrect)
 #d.add(transform_svg("Photos/BobMarley.svg", 275, 100, avatars, avatars))
 #d.add(transform_svg("Photos/PeterTosh.svg", 380, 100, avatars, avatars))
 for i in range(len(legendsdata)):
