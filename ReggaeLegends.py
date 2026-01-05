@@ -35,7 +35,7 @@ dx = 0.5 * s
 dy = math.sqrt(s**2 - (0.5 * s)**2)  # sqrt(6400 - 1600) = 69.282
 
 # width = s + 2 * dx      1200
-# height = 2 * dy         ??? 1000 todo gimp crop in good ratio
+# height = 2 * dy         1039
 
 class Hexagon(_Symbol):
     def __init__(self, x, y):
@@ -69,9 +69,9 @@ class Hexagon(_Symbol):
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle2)
-        l1 = shapes.Line(xl, self.y, xl + dx, self.y + dy, strokeColor = white, strokeWidth = 5, strokeLineCap = 1)
+        l1 = shapes.Line(xl, self.y, xl + dx, self.y + dy, strokeColor = white, strokeWidth = 1, strokeLineCap = 1)
         g.add(l1)
-        l2 = shapes.Line(xl, self.y, xl + dx, self.y - dy, strokeColor = white, strokeWidth = 5, strokeLineCap = 1)
+        l2 = shapes.Line(xl, self.y, xl + dx, self.y - dy, strokeColor = white, strokeWidth = 1, strokeLineCap = 1)
         g.add(l2)
         triangle3 = shapes.Polygon(
         points=[xr, self.y,
@@ -89,18 +89,18 @@ class Hexagon(_Symbol):
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle4)
-        l3 = shapes.Line(xr, self.y, xr - dx, self.y + dy, strokeColor = white, strokeWidth = 5, strokeLineCap = 1)
+        l3 = shapes.Line(xr, self.y, xr - dx, self.y + dy, strokeColor = white, strokeWidth = 1, strokeLineCap = 1)
         g.add(l3)
-        l4 = shapes.Line(xr, self.y, xr - dx, self.y - dy, strokeColor = white, strokeWidth = 5, strokeLineCap = 1)
+        l4 = shapes.Line(xr, self.y, xr - dx, self.y - dy, strokeColor = white, strokeWidth = 1, strokeLineCap = 1)
         g.add(l4)
-        la = shapes.Line(xl + dx, self.y + dy, xr - dx, self.y + dy, strokeColor = white, strokeWidth = 5, strokeLineCap = 1)
+        la = shapes.Line(xl + dx, self.y + dy, xr - dx, self.y + dy, strokeColor = white, strokeWidth = 1, strokeLineCap = 1)
         g.add(la)
-        lb = shapes.Line(xl + dx, self.y - dy, xr - dx, self.y - dy, strokeColor = white, strokeWidth = 5, strokeLineCap = 1)
+        lb = shapes.Line(xl + dx, self.y - dy, xr - dx, self.y - dy, strokeColor = white, strokeWidth = 1, strokeLineCap = 1)
         g.add(lb)
         return g
         
 def drawLegend(d, i):
-    # 1200 w 1588 h  149 w 179 h factor 8.05
+    # 1200 w 1588 h
     img = "Photos/Posters/" + legendsdata[i][0] + ".png"
     d.add(Image(path = img, width = 155, height = 130, x = float(legendsdata[i][1]) - 2.0 - dx - 0.5 * dy, y = float(legendsdata[i][2]) - 65, mask = None))
     h = Hexagon(float(legendsdata[i][1]), float(legendsdata[i][2]))
