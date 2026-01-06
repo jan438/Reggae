@@ -71,9 +71,9 @@ class Hexagon(_Symbol):
                strokeWidth = 0)
         g.add(triangle2)
         l1 = shapes.Line(xl, self.y, xl + dx, self.y + dy, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
-        g.add(l1)
+        #g.add(l1)
         l2 = shapes.Line(xl, self.y, xl + dx, self.y - dy, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
-        g.add(l2)
+        #g.add(l2)
         triangle3 = shapes.Polygon(
         points=[xr, self.y,
                 xr, self.y - dy,
@@ -91,13 +91,13 @@ class Hexagon(_Symbol):
                strokeWidth = 0)
         g.add(triangle4)
         l3 = shapes.Line(xr, self.y, xr - dx, self.y + dy, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
-        g.add(l3)
+        #g.add(l3)
         l4 = shapes.Line(xr, self.y, xr - dx, self.y - dy, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
-        g.add(l4)
+        #g.add(l4)
         la = shapes.Line(xl + dx, self.y + dy, xr - dx, self.y + dy, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
-        g.add(la)
+        #g.add(la)
         lb = shapes.Line(xl + dx, self.y - dy, xr - dx, self.y - dy, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
-        g.add(lb)
+        #g.add(lb)
         return g
         
 def drawLegend(d, i):
