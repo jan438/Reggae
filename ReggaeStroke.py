@@ -36,6 +36,7 @@ dy = math.sqrt(s**2 - (0.5 * s)**2)  # sqrt(6400 - 1600) = 69.282 height hexagon
 strokew = 15
 strokedx = 0.5 * strokew
 strokedy = math.sqrt(strokew**2 - (0.5 * strokew)**2)
+ratiodydx = 1.73205
 
 # width = s + 2 * dx      1200
 # height = 2 * dy         1039
