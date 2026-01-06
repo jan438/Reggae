@@ -92,7 +92,7 @@ class Hexagon(_Symbol):
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle4)
-        l3 = shapes.Line(xr, self.y, xr - dx, self.y + dy, strokeColor = white, strokeWidth = 1, strokeLineCap = 1)
+        l3 = shapes.Line(xr + strokedx, self.y, xr - dx + strokedx, self.y + dy, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
         g.add(l3)
         l4 = shapes.Line(xr, self.y, xr - dx, self.y - dy, strokeColor = white, strokeWidth = 1, strokeLineCap = 1)
         g.add(l4)
