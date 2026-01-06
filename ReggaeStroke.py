@@ -96,7 +96,7 @@ class Hexagon(_Symbol):
         g.add(l3)
         l4 = shapes.Line(xr, self.y, xr - dx, self.y - dy, strokeColor = white, strokeWidth = 1, strokeLineCap = 1)
         g.add(l4)
-        la = shapes.Line(xl + dx, self.y + dy, xr - dx, self.y + dy, strokeColor = white, strokeWidth = 1, strokeLineCap = 1)
+        la = shapes.Line(xl + dx, self.y + dy + strokedx, xr - dx, self.y + dy + strokedx, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
         g.add(la)
         lb = shapes.Line(xl + dx, self.y - dy, xr - dx, self.y - dy, strokeColor = white, strokeWidth = 1, strokeLineCap = 1)
         g.add(lb)
