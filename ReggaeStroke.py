@@ -37,6 +37,7 @@ strokew = 15
 strokedx = 0.5 * strokew
 strokedy = math.sqrt(strokew**2 - (0.5 * strokew)**2)
 ratiodydx = 1.73205
+extension = 4.4
 
 # width = s + 2 * dx      1200
 # height = 2 * dy         1039
@@ -73,7 +74,7 @@ class Hexagon(_Symbol):
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle2)
-        l1 = shapes.Line(xl - strokedx, self.y, xl + dx - strokedx + 4.5, self.y + dy + 4.5 * ratiodydx, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
+        l1 = shapes.Line(xl - strokedx, self.y, xl + dx - strokedx + extension, self.y + dy + extension * ratiodydx, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
         g.add(l1)
         l2 = shapes.Line(xl - strokedx, self.y, xl + dx - strokedx, self.y - dy, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
         g.add(l2)
