@@ -33,7 +33,7 @@ legendsdata = []
 s = 80
 dx = 0.5 * s                         #                            width hexagon  160
 dy = math.sqrt(s**2 - (0.5 * s)**2)  # sqrt(6400 - 1600) = 69.282 height hexagon 138.564 ratio 1.154701077
-strokew = 20
+strokew = 15
 strokedx = 0.5 * strokew
 strokedy = math.sqrt(strokew**2 - (0.5 * strokew)**2)
 
