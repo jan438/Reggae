@@ -111,7 +111,7 @@ def drawLegend(d, i):
     bgrect = shapes.Rect(float(legendsdata[i][1]) - dx - 0.5 * dy, float(legendsdata[i][2]) - 110, 149, 40, fillColor = background, strokeColor = background, strokeWidth = 0)
     #d.add(bgrect)
     d.add(h)
-    d.add(String(float(legendsdata[i][1]) - dx, float(legendsdata[i][2]) - 100, legendsdata[i][0], fontName='Courier', fontSize = 15))
+    #d.add(String(float(legendsdata[i][1]) - dx, float(legendsdata[i][2]) - 100, legendsdata[i][0], fontName='Courier', fontSize = 15))
     return
     
 def scaleSVG(svgfile, scaling_factor):
