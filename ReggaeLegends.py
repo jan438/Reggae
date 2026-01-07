@@ -26,8 +26,9 @@ from reportlab.graphics.widgets import signsandsymbols
 from reportlab.graphics.widgets.signsandsymbols import _Symbol
 from reportlab.graphics.charts.textlabels import Label
 
-background = "#61869E"
-# #C99D74
+background1 = "#61869E"
+background2 = "#C99D74"
+
 legendsdata = []
 s = 80
 dx = 0.5 * s                         #                            width hexagon  160
@@ -45,8 +46,8 @@ class Hexagon(_Symbol):
     def __init__(self, x, y):
         self.x = x     # middle point
         self.y = y
-        self.fillColor = HexColor(background)
-        self.strokeColor = HexColor(background)
+        self.fillColor = HexColor(background1)
+        self.strokeColor = HexColor(background1)
 
     def draw(self):
         g = shapes.Group()
@@ -108,7 +109,7 @@ def drawLegend(d, i):
     img = "Photos/Posters/" + legendsdata[i][0] + ".png"
     d.add(Image(path = img, width = 159, height = 138, x = float(legendsdata[i][1]) - 5.0 - dx - 0.5 * dy, y = float(legendsdata[i][2]) - 69, mask = None))
     h = Hexagon(float(legendsdata[i][1]), float(legendsdata[i][2]))
-    bgrect = shapes.Rect(float(legendsdata[i][1]) - dx - 0.5 * dy, float(legendsdata[i][2]) - 110, 149, 40, fillColor = background, strokeColor = background, strokeWidth = 0)
+    bgrect = shapes.Rect(float(legendsdata[i][1]) - dx - 0.5 * dy, float(legendsdata[i][2]) - 110, 149, 40, fillColor = background1, strokeColor = background1, strokeWidth = 0)
     #d.add(bgrect)
     d.add(h)
     #d.add(String(float(legendsdata[i][1]) - dx, float(legendsdata[i][2]) - 100, legendsdata[i][0], fontName='Courier', fontSize = 15))
@@ -166,7 +167,7 @@ with open(file_to_open, 'r') as file:
 print("Count csv", count)
 avatars = 0.1
 d = Drawing(A4[1], A4[0])
-bgrect = shapes.Rect(0, 0, A4[1], A4[0], fillColor = background, strokeColor = background, strokeWidth = 0)
+bgrect = shapes.Rect(0, 0, A4[1], A4[0], fillColor = background1, strokeColor = background1, strokeWidth = 0)
 d.add(bgrect)
 #d.add(transform_svg("Photos/BobMarley.svg", 275, 100, avatars, avatars))
 #d.add(transform_svg("Photos/PeterTosh.svg", 380, 100, avatars, avatars))
