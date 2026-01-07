@@ -6,11 +6,23 @@
 5 rightbelow
 6 rightabove
 
-case tosh toots
-xhibbert = xtosh + dxs   330.0 + dxs = 490.0    dxs = 160 
-yhibbert = ytosh + dys   291.0 = dys = 360.282  dys = 69.282
+landscape width 842 heigt 595
+         middle 421 hexagon width
+         
+   1e 2   2e 3  3e 2  4e 3
+     50   
 
-case toots brown
-xbrown = xtoots + dxs   490.0 + 160 = 650
-ybrown = ytoots + dys   360.282 + 69.282 = 429.564
+Bob Marley;126.0;177.0;y;y;y;y;
+Peter Tosh;330.0;291.0;y;y;y;y;
+
+Toots Hibbert;530.0;318.0;y;y;y;y;
+Burning Spear;700.0;225.0;y;y;y;y;
+Jimmy Cliff;130.0;416.0;y;y;y;y;
+
+Dennis Brown;690.0;429.564;y;y;y;y;
+Judith Mowat;310.0;480.0;y;y;y;y;
+
+Gregory Isaacs;345.0;105.0;y;y;y;y;
+Marcia Griffith;527.0;130.0;y;y;y;y;
+Bunny Wailer;498.0;488.0;y;y;y;y;
 
