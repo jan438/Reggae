@@ -33,8 +33,11 @@ legendsdata = []
 s = 80
 dx = 0.5 * s                         #                            width hexagon  160
 dy = math.sqrt(s**2 - (0.5 * s)**2)  # sqrt(6400 - 1600) = 69.282 height hexagon 138.564 ratio 1.154701077
-strokew = 1
+strokew = 15
+strokedx = 0.5 * strokew
+strokedy = math.sqrt(strokew**2 - (0.5 * strokew)**2)
 ratiodydx = 1.73205
+extension = 4.4
 
 # width = s + 2 * dx      1200
 # height = 2 * dy         1039
@@ -71,9 +74,9 @@ class Hexagon(_Symbol):
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle2)
-        l1 = shapes.Line(xl, self.y, xl + dx, self.y + dy, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
+        l1 = shapes.Line(xl - strokedx, self.y, xl + dx - strokedx + extension, self.y + dy + extension * ratiodydx, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
         g.add(l1)
-        l2 = shapes.Line(xl, self.y, xl + dx, self.y - dy, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
+        l2 = shapes.Line(xl - strokedx, self.y, xl + dx - strokedx + extension, self.y - dy - extension * ratiodydx, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
         g.add(l2)
         triangle3 = shapes.Polygon(
         points=[xr, self.y,
@@ -91,13 +94,13 @@ class Hexagon(_Symbol):
                strokeColor = self.strokeColor,
                strokeWidth = 0)
         g.add(triangle4)
-        l3 = shapes.Line(xr, self.y, xr - dx, self.y + dy, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
+        l3 = shapes.Line(xr + strokedx, self.y, xr - dx + strokedx - extension, self.y + dy + extension * ratiodydx, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
         g.add(l3)
-        l4 = shapes.Line(xr, self.y, xr - dx, self.y - dy, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
+        l4 = shapes.Line(xr + strokedx, self.y, xr - dx + strokedx - extension, self.y - dy - extension * ratiodydx, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
         g.add(l4)
-        la = shapes.Line(xl + dx, self.y + dy, xr - dx, self.y + dy, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
+        la = shapes.Line(xl + dx, self.y + dy + strokedx, xr - dx, self.y + dy + strokedx, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
         g.add(la)
-        lb = shapes.Line(xl + dx, self.y - dy, xr - dx, self.y - dy, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
+        lb = shapes.Line(xl + dx, self.y - dy - strokedx, xr - dx, self.y - dy - strokedx, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
         g.add(lb)
         return g
         
