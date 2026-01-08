@@ -112,7 +112,6 @@ def drawLegend(d, i):
     d.add(Image(path = img, width = 159, height = 138, x = leftmargin + float(legendsdata[i][1]) - 5.0 - dx - 0.5 * dy, y = bottommargin + float(legendsdata[i][2]) - 69, mask = None))
     h = Hexagon(leftmargin + float(legendsdata[i][1]), bottommargin + float(legendsdata[i][2]))
     d.add(h)
-    #d.add(String(float(legendsdata[i][1]) - dx, float(legendsdata[i][2]) - 100, legendsdata[i][0], fontName='Courier', fontSize = 15))
     return
     
 def scaleSVG(svgfile, scaling_factor):
