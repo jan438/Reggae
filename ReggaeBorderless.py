@@ -35,6 +35,8 @@ dx = 0.5 * s                         #                            width hexagon 
 dy = math.sqrt(s**2 - (0.5 * s)**2)  # sqrt(6400 - 1600) = 69.282 height hexagon 138.564 ratio 1.154701077
 strokew = 1
 ratiodydx = 1.73205
+leftmargin = 15
+bottommargin = 2
 
 # width = s + 2 * dx      1200
 # height = 2 * dy         1039
@@ -104,10 +106,10 @@ class Hexagon(_Symbol):
 def drawLegend(d, i):
     # 1200 w 1588 h
     img = "Photos/Posters/" + legendsdata[i][0] + ".png"
-    d.add(Image(path = img, width = 159, height = 138, x = float(legendsdata[i][1]) - 5.0 - dx - 0.5 * dy, y = float(legendsdata[i][2]) - 69, mask = None))
-    h = Hexagon(float(legendsdata[i][1]), float(legendsdata[i][2]))
+    d.add(Image(path = img, width = 159, height = 138, x = leftmargin + float(legendsdata[i][1]) - 5.0 - dx - 0.5 * dy, y = bottommargin + float(legendsdata[i][2]) - 69, mask = None))
+    h = Hexagon(leftmargin + float(legendsdata[i][1]), bottommargin + float(legendsdata[i][2]))
     d.add(h)
-    d.add(String(float(legendsdata[i][1]) - dx, float(legendsdata[i][2]) - 100, legendsdata[i][0], fontName='Courier', fontSize = 15))
+    d.add(String(leftmargin + float(legendsdata[i][1]) - dx, bottommargin + float(legendsdata[i][2]) - 100, legendsdata[i][0], fontName='Courier', fontSize = 15))
     return
     
 def scaleSVG(svgfile, scaling_factor):
