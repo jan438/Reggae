@@ -37,7 +37,7 @@ strokew = 15
 strokedx = 0.5 * strokew
 strokedy = math.sqrt(strokew**2 - (0.5 * strokew)**2)
 ratiodydx = 1.73205
-extension = 4.4
+extension = 4.35
 
 # width = s + 2 * dx      1200
 # height = 2 * dy         1039
