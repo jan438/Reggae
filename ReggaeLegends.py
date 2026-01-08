@@ -38,7 +38,7 @@ strokedx = 0.5 * strokew
 strokedy = math.sqrt(strokew**2 - (0.5 * strokew)**2)
 ratiodydx = 1.73205
 extension = 4.35
-leftmargin = 0
+leftmargin = 15
 
 # width = s + 2 * dx      1200
 # height = 2 * dy         1039
@@ -106,12 +106,11 @@ class Hexagon(_Symbol):
         return g
         
 def drawLegend(d, i):
-    # 1200 w 1588 h
+    # 1200 w 1588 h orig file
     img = "Photos/Posters/" + legendsdata[i][0] + ".png"
-    d.add(Image(path = img, width = 159, height = 138, x = float(legendsdata[i][1]) - 5.0 - dx - 0.5 * dy, y = float(legendsdata[i][2]) - 69, mask = None))
-    h = Hexagon(float(legendsdata[i][1]), float(legendsdata[i][2]))
+    d.add(Image(path = img, width = 159, height = 138, x = leftmargin + float(legendsdata[i][1]) - 5.0 - dx - 0.5 * dy, y = float(legendsdata[i][2]) - 69, mask = None))
+    h = Hexagon(leftmargin + float(legendsdata[i][1]), float(legendsdata[i][2]))
     bgrect = shapes.Rect(float(legendsdata[i][1]) - dx - 0.5 * dy, float(legendsdata[i][2]) - 110, 149, 40, fillColor = background1, strokeColor = background1, strokeWidth = 0)
-    #d.add(bgrect)
     d.add(h)
     #d.add(String(float(legendsdata[i][1]) - dx, float(legendsdata[i][2]) - 100, legendsdata[i][0], fontName='Courier', fontSize = 15))
     return
