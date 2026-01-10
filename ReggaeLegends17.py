@@ -30,10 +30,10 @@ background1 = "#61869E"
 background2 = "#C99D74"
 
 legendsdata = []
-s = 80
+s = 70
 dx = 0.5 * s                         #                            width hexagon  160
 dy = math.sqrt(s**2 - (0.5 * s)**2)  # sqrt(6400 - 1600) = 69.282 height hexagon 138.564 ratio 1.154701077
-strokew = 15
+strokew = 10
 strokedx = 0.5 * strokew
 strokedy = math.sqrt(strokew**2 - (0.5 * strokew)**2)
 ratiodydx = 1.73205
