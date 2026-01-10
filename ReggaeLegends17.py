@@ -109,7 +109,7 @@ class Hexagon(_Symbol):
 def drawLegend(d, i):
     # 1200 w 1588 h orig file
     img = "Photos/Posters/" + legendsdata[i][0] + ".png"
-    d.add(Image(path = img, width = 138, height = 120, x = leftmargin + float(legendsdata[i][1]) - 4.0 - dx - 0.5 * dy, y = bottommargin + float(legendsdata[i][2]) - 60, mask = None))
+    d.add(Image(path = img, width = 138, height = 121, x = leftmargin + float(legendsdata[i][1]) - 4.0 - dx - 0.5 * dy, y = bottommargin + float(legendsdata[i][2]) - 60.5, mask = None))
     h = Hexagon(leftmargin + float(legendsdata[i][1]), bottommargin + float(legendsdata[i][2]))
     d.add(h)
     return
