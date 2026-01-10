@@ -164,12 +164,10 @@ with open(file_to_open, 'r') as file:
         legendsdata.append(row)
         count += 1
 print("Count csv", count)
-avatars = 0.1
+#pagesize=(595.27,841.89)
 d = Drawing(A4[1], A4[0])
 bgrect = shapes.Rect(0, 0, A4[1], A4[0], fillColor = background1, strokeColor = background1, strokeWidth = 0)
 d.add(bgrect)
-#d.add(transform_svg("Photos/BobMarley.svg", 275, 100, avatars, avatars))
-#d.add(transform_svg("Photos/PeterTosh.svg", 380, 100, avatars, avatars))
 for i in range(len(legendsdata)):
     print(i, legendsdata[i][6])
     drawLegend(d, i)
