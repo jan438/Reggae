@@ -171,7 +171,8 @@ d = Drawing(A4[1], A4[0])
 bgrect = shapes.Rect(0, 0, A4[1], A4[0], fillColor = background1, strokeColor = background1, strokeWidth = 0)
 d.add(bgrect)
 for i in range(len(legendsdata)):
-    print(i, legendsdata[i][6])
+    for j in range(4):
+        triangleflags[j] = legendsdata[i][3 + j]
     drawLegend(d, i)
 
 renderPDF.drawToFile(d, 'PDF/ReggaeLegends17.pdf')
