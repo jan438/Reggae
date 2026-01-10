@@ -173,6 +173,7 @@ d.add(bgrect)
 for i in range(len(legendsdata)):
     for j in range(4):
         triangleflags[j] = legendsdata[i][3 + j]
+        print(legendsdata[i][3 + j], triangleflags[j])
     drawLegend(d, i)
 
 renderPDF.drawToFile(d, 'PDF/ReggaeLegends17.pdf')
