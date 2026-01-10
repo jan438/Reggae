@@ -9,11 +9,11 @@
 landscape width 842 heigt 595
          middle 421
          
-         distance 150
+         distance 130
          
-   1e 2   2e 3  3e 2  4e 3
-      70   220   490    660
-        150   150    150
+   1e 2   2e 3  3e 3  4e 3  5e 3    6e 3
+    70     200    330    460   590   620
+        130    130    130   130   130
      
 
 
