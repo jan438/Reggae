@@ -111,43 +111,10 @@ class HexagonLines(_Symbol):
         #g.add(mcircle)
         xl = self.x - dx - 0.5 * s
         xr = self.x + dx + 0.5 * s
-        triangle1 = shapes.Polygon(
-        points=[xl, self.y,
-                xl, self.y + dy,
-                xl + dx, self.y + dy],
-               fillColor = self.fillColor,
-               strokeColor = self.strokeColor,
-               strokeWidth = 0)
-
-        #g.add(triangle1)
-        triangle2 = shapes.Polygon(
-        points=[xl, self.y,
-                xl, self.y - dy,
-                xl + dx, self.y - dy],
-               fillColor = self.fillColor,
-               strokeColor = self.strokeColor,
-               strokeWidth = 0)
-        #g.add(triangle2)
         l1 = shapes.Line(xl - strokedx, self.y, xl + dx - strokedx + extension, self.y + dy + extension * ratiodydx, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
         g.add(l1)
         l2 = shapes.Line(xl - strokedx, self.y, xl + dx - strokedx + extension, self.y - dy - extension * ratiodydx, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
         g.add(l2)
-        triangle3 = shapes.Polygon(
-        points=[xr, self.y,
-                xr, self.y - dy,
-                xr - dx, self.y - dy],
-               fillColor = self.fillColor,
-               strokeColor = self.strokeColor,
-               strokeWidth = 0)
-        #g.add(triangle3)
-        triangle4 = shapes.Polygon(
-        points=[xr, self.y,
-                xr, self.y + dy,
-                xr - dx, self.y + dy],
-               fillColor = self.fillColor,
-               strokeColor = self.strokeColor,
-               strokeWidth = 0)
-        #g.add(triangle4)
         l3 = shapes.Line(xr + strokedx, self.y, xr - dx + strokedx - extension, self.y + dy + extension * ratiodydx, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
         g.add(l3)
         l4 = shapes.Line(xr + strokedx, self.y, xr - dx + strokedx - extension, self.y - dy - extension * ratiodydx, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
