@@ -40,7 +40,6 @@ ratiodydx = 1.2
 extension = 4.35
 leftmargin = 15
 bottommargin = 2
-triangleflags = ["y", "y", "y", "y"]
 
 # width = s + 2 * dx      1200
 # height = 2 * dy         1039
@@ -53,7 +52,6 @@ class Hexagon(_Symbol):
         self.strokeColor = HexColor(background1)
 
     def draw(self):
-        print("triangleflags3", triangleflags[3])
         g = shapes.Group()
         #mcircle = shapes.Circle(self.x, self.y, 2, 
         #          fillColor = blue,
@@ -171,9 +169,6 @@ d = Drawing(A4[1], A4[0])
 bgrect = shapes.Rect(0, 0, A4[1], A4[0], fillColor = background1, strokeColor = background1, strokeWidth = 0)
 d.add(bgrect)
 for i in range(len(legendsdata)):
-    for j in range(4):
-        triangleflags[j] = legendsdata[i][3 + j]
-        print(i, legendsdata[i][0], legendsdata[i][3 + j], triangleflags[j])
     drawLegend(d, i)
 
 renderPDF.drawToFile(d, 'PDF/ReggaeLegends17.pdf')
