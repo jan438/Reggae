@@ -44,7 +44,7 @@ bottommargin = 2
 # width = s + 2 * dx      1200
 # height = 2 * dy         1039
 
-class Hexagon(_Symbol):
+class HexagonTriangle(_Symbol):
     def __init__(self, x, y):
         self.x = x     # middle point
         self.y = y
@@ -110,7 +110,7 @@ def drawLegend(d, i):
     # 1200 w 1588 h orig file
     img = "Photos/Posters/" + legendsdata[i][0] + ".png"
     d.add(Image(path = img, width = 138, height = 121, x = leftmargin + float(legendsdata[i][1]) - 4.0 - dx - 0.5 * dy, y = bottommargin + float(legendsdata[i][2]) - 60.5, mask = None))
-    h = Hexagon(leftmargin + float(legendsdata[i][1]), bottommargin + float(legendsdata[i][2]))
+    h = HexagonTriangle(leftmargin + float(legendsdata[i][1]), bottommargin + float(legendsdata[i][2]))
     d.add(h)
     return
     
