@@ -106,11 +106,83 @@ class HexagonTriangle(_Symbol):
         #g.add(lb)
         return g
         
-def drawLegend(d, i):
+class HexagonLines(_Symbol):
+    def __init__(self, x, y):
+
+        self.x = x     # middle point
+        self.y = y
+        self.fillColor = HexColor(background1)
+        self.strokeColor = HexColor(background1)
+
+    def draw(self):
+        g = shapes.Group()
+        #mcircle = shapes.Circle(self.x, self.y, 2, 
+        #          fillColor = blue,
+        #          strokeColor = blue,
+        #          strokeWidth = 1)
+        #g.add(mcircle)
+        xl = self.x - dx - 0.5 * s
+        xr = self.x + dx + 0.5 * s
+        triangle1 = shapes.Polygon(
+        points=[xl, self.y,
+                xl, self.y + dy,
+                xl + dx, self.y + dy],
+               fillColor = self.fillColor,
+               strokeColor = self.strokeColor,
+               strokeWidth = 0)
+
+        #g.add(triangle1)
+        triangle2 = shapes.Polygon(
+        points=[xl, self.y,
+                xl, self.y - dy,
+                xl + dx, self.y - dy],
+               fillColor = self.fillColor,
+               strokeColor = self.strokeColor,
+               strokeWidth = 0)
+        #g.add(triangle2)
+        l1 = shapes.Line(xl - strokedx, self.y, xl + dx - strokedx + extension, self.y + dy + extension * ratiodydx, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
+        g.add(l1)
+        l2 = shapes.Line(xl - strokedx, self.y, xl + dx - strokedx + extension, self.y - dy - extension * ratiodydx, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
+        g.add(l2)
+        triangle3 = shapes.Polygon(
+        points=[xr, self.y,
+                xr, self.y - dy,
+                xr - dx, self.y - dy],
+               fillColor = self.fillColor,
+               strokeColor = self.strokeColor,
+               strokeWidth = 0)
+        #g.add(triangle3)
+        triangle4 = shapes.Polygon(
+        points=[xr, self.y,
+                xr, self.y + dy,
+                xr - dx, self.y + dy],
+               fillColor = self.fillColor,
+               strokeColor = self.strokeColor,
+               strokeWidth = 0)
+        #g.add(triangle4)
+        l3 = shapes.Line(xr + strokedx, self.y, xr - dx + strokedx - extension, self.y + dy + extension * ratiodydx, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
+        g.add(l3)
+        l4 = shapes.Line(xr + strokedx, self.y, xr - dx + strokedx - extension, self.y - dy - extension * ratiodydx, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
+        g.add(l4)
+        la = shapes.Line(xl + dx, self.y + dy + strokedx, xr - dx, self.y + dy + strokedx, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
+        g.add(la)
+        lb = shapes.Line(xl + dx, self.y - dy - strokedx, xr - dx, self.y - dy - strokedx, strokeColor = white, strokeWidth = strokew, strokeLineCap = 1)
+        g.add(lb)
+        return g
+        
+def drawLegendTriangle(d, i):
     # 1200 w 1588 h orig file
     img = "Photos/Posters/" + legendsdata[i][0] + ".png"
     d.add(Image(path = img, width = 138, height = 121, x = leftmargin + float(legendsdata[i][1]) - 4.0 - dx - 0.5 * dy, y = bottommargin + float(legendsdata[i][2]) - 60.5, mask = None))
     h = HexagonTriangle(leftmargin + float(legendsdata[i][1]), bottommargin + float(legendsdata[i][2]))
+    d.add(h)
+    return
+    
+def drawLegendLines(d, i):
+    # 1200 w 1588 h orig file
+    #img = "Photos/Posters/" + legendsdata[i][0] + ".png"
+    #d.add(Image(path = img, width = 138, height = 121, x = leftmargin + float(legendsdata[i][1]) - 4.0 - dx - 0.5 * dy, y = bottommargin + float(legendsdata[i][2]) - 60.5, mask = None))
+    h = HexagonLines(leftmargin + float(legendsdata[i][1]), bottommargin + float(legendsdata[i][2]))
     d.add(h)
     return
     
@@ -169,8 +241,9 @@ d = Drawing(A4[1], A4[0])
 bgrect = shapes.Rect(0, 0, A4[1], A4[0], fillColor = background1, strokeColor = background1, strokeWidth = 0)
 d.add(bgrect)
 for i in range(len(legendsdata)):
-    drawLegend(d, i)
-
+    drawLegendTriangle(d, i)
+for i in range(len(legendsdata)):
+    drawLegendLines(d, i)
 renderPDF.drawToFile(d, 'PDF/ReggaeLegends17.pdf')
 
 key = input("Wait")
