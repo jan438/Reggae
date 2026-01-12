@@ -40,7 +40,7 @@ ratiodydx = 1.2
 extension = 4.35
 leftmargin = 25
 bottommargin = 6
-maxnamewidth = 100.0
+maxnamewidth = 100.8
 
 # width = s + 2 * dx      1200
 # height = 2 * dy         1039
@@ -139,7 +139,7 @@ def drawLegendLines(d, i):
     #d.add(h)
     namewidth = pdfmetrics.stringWidth(legendsdata[i][0], 'Courier', 12)
     print(legendsdata[i][0], namewidth)
-    d.add(String(leftmargin + float(legendsdata[i][1]) - dx + (maxnamewidth - namewidth), bottommargin + float(legendsdata[i][2]) - 83, legendsdata[i][0], fontName = 'Courier', fillColor = orange, fontSize = 12))
+    d.add(String(leftmargin + float(legendsdata[i][1]) - dx - 10.0 + (maxnamewidth - namewidth), bottommargin + float(legendsdata[i][2]) - 83, legendsdata[i][0], fontName = 'Courier', fillColor = orange, fontSize = 12))
     return
     
 def scaleSVG(svgfile, scaling_factor):
