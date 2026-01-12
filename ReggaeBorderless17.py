@@ -40,7 +40,7 @@ ratiodydx = 1.2
 extension = 4.35
 leftmargin = 25
 bottommargin = 6
-maxnamewidth = 108.8
+maxnamewidth = 73.635
 reggaefont = "LiberationSerif"
 
 # width = s + 2 * dx      1200
