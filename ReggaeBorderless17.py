@@ -136,6 +136,8 @@ def drawLegendTriangle(d, i):
 def drawLegendLines(d, i):
     h = HexagonLines(leftmargin + float(legendsdata[i][1]), bottommargin + float(legendsdata[i][2]))
     #d.add(h)
+    namewidth = pdfmetrics.stringWidth(legendsdata[i][0], 'Courier', 12)
+    print(legendsdata[i][0], namewidth)
     d.add(String(leftmargin + float(legendsdata[i][1]) - dx, bottommargin + float(legendsdata[i][2]) - 83, legendsdata[i][0], fontName = 'Courier', fillColor = orange, fontSize = 12))
     return
     
