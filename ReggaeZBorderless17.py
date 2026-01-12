@@ -135,8 +135,8 @@ def drawLegendTriangle(d, i):
     
 def drawLegendLines(d, i):
     h = HexagonLines(leftmargin + float(legendsdata[i][1]), bottommargin + float(legendsdata[i][2]))
-    d.add(h)
-    #d.add(String(leftmargin + float(legendsdata[i][1]) - dx, bottommargin + float(legendsdata[i][2]) - 83, legendsdata[i][0], fontName = 'Courier', fillColor = orange, fontSize = 12))
+    #d.add(h)
+    d.add(String(leftmargin + float(legendsdata[i][1]) - dx, bottommargin + float(legendsdata[i][2]) - 83, legendsdata[i][0], fontName = 'Courier', fillColor = orange, fontSize = 12))
     return
     
 def scaleSVG(svgfile, scaling_factor):
