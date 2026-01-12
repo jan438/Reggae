@@ -112,7 +112,7 @@ def drawLegend(d, i):
     h = Hexagon(leftmargin + float(legendsdata[i][1]), bottommargin + float(legendsdata[i][2]))
     d.add(h)
     namewidth = pdfmetrics.stringWidth(legendsdata[i][0], reggaefont, 12)
-    d.add(String(leftmargin + float(legendsdata[i][1]) - dx + 0.5 * (maxnamewidth - namewidth), bottommargin + float(legendsdata[i][2]) - 100, legendsdata[i][0], font = reggaefont, fontSize = 12))
+    d.add(String(leftmargin + float(legendsdata[i][1]) - dx + 5.0 + 0.5 * (maxnamewidth - namewidth), bottommargin + float(legendsdata[i][2]) - 90, legendsdata[i][0], font = reggaefont, fontSize = 12))
     return
     
 def scaleSVG(svgfile, scaling_factor):
