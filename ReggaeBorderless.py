@@ -37,6 +37,8 @@ strokew = 1
 ratiodydx = 1.73205
 leftmargin = 15
 bottommargin = 2
+maxnamewidth = 73.635
+reggaefont = "LiberationSerif"
 
 # width = s + 2 * dx      1200
 # height = 2 * dy         1039
@@ -109,7 +111,8 @@ def drawLegend(d, i):
     d.add(Image(path = img, width = 159, height = 138, x = leftmargin + float(legendsdata[i][1]) - 5.0 - dx - 0.5 * dy, y = bottommargin + float(legendsdata[i][2]) - 69, mask = None))
     h = Hexagon(leftmargin + float(legendsdata[i][1]), bottommargin + float(legendsdata[i][2]))
     d.add(h)
-    d.add(String(leftmargin + float(legendsdata[i][1]) - dx, bottommargin + float(legendsdata[i][2]) - 100, legendsdata[i][0], fontName='Courier', fontSize = 15))
+    namewidth = pdfmetrics.stringWidth(legendsdata[i][0], reggaefont, 12)
+    d.add(String(leftmargin + float(legendsdata[i][1]) - dx + 0.5 * (maxnamewidth - namewidth), bottommargin + float(legendsdata[i][2]) - 100, legendsdata[i][0], font = reggaefont, fontSize = 12))
     return
     
 def scaleSVG(svgfile, scaling_factor):
