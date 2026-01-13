@@ -40,6 +40,8 @@ ratiodydx = 1.2
 extension = 4.35
 leftmargin = 25
 bottommargin = 6
+maxnamewidth = 78.305
+reggaefont = "LiberationSerif"
 
 # width = s + 2 * dx      1200
 # height = 2 * dy         1039
@@ -136,7 +138,9 @@ def drawLegendTriangle(d, i):
 def drawLegendLines(d, i):
     h = HexagonLines(leftmargin + float(legendsdata[i][1]), bottommargin + float(legendsdata[i][2]))
     d.add(h)
-    #d.add(String(leftmargin + float(legendsdata[i][1]) - dx, bottommargin + float(legendsdata[i][2]) - 83, legendsdata[i][0], fontName = 'Courier', fillColor = orange, fontSize = 12))
+    namewidth = pdfmetrics.stringWidth(legendsdata[i][0], reggaefont, 12)
+    print(legendsdata[i][0], namewidth)
+    d.add(String(leftmargin + float(legendsdata[i][1]) - dx + 0.5 * (maxnamewidth - namewidth), bottommargin + float(legendsdata[i][2]) - 83, legendsdata[i][0], font = reggaefont, fillColor = HexColor(background2), fontSize = 12))
     return
     
 def scaleSVG(svgfile, scaling_factor):
