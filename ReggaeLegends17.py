@@ -201,6 +201,9 @@ for i in range(len(legendsdata)):
     drawLegendTriangle(d, i)
 d.add(transform_svg("Tribe of Judah.svg", 35.0, 450, 0.40, 0.40))  
 d.add(transform_svg("rasta.svg", 100.0, 540, 0.40, 0.40))
+d.add(transform_svg("cannabis.svg", 69.0, 436, 0.025, 0.025))
+d.add(transform_svg("cannabis.svg", 89.0, 436, 0.025, 0.025))
+d.add(transform_svg("cannabis.svg", 109.0, 436, 0.025, 0.025))
 for i in range(len(legendsdata)):
     drawLegendLines(d, i)
 
