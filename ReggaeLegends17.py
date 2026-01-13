@@ -202,7 +202,7 @@ for i in range(len(legendsdata)):
 for i in range(len(legendsdata)):
     drawLegendLines(d, i)
 
-d.add(transform_svg("Tribe of Judah.svg", 100, 200, 1.1, 1.1))    
+d.add(transform_svg("Tribe of Judah.svg", 0, 400, 0.8, 0.8))    
     
 renderPDF.drawToFile(d, 'PDF/ReggaeLegends17.pdf')
 
