@@ -201,6 +201,9 @@ for i in range(len(legendsdata)):
     drawLegendTriangle(d, i)
 for i in range(len(legendsdata)):
     drawLegendLines(d, i)
+
+d.add(transform_svg("Tribe of Judah.svg", 100, 200, 1.1, 1.1))    
+    
 renderPDF.drawToFile(d, 'PDF/ReggaeLegends17.pdf')
 
 key = input("Wait")
