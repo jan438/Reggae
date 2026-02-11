@@ -30,7 +30,7 @@ background1 = "#61869E"
 background2 = "#C99D74"
 
 legendsdata = []
-s = 70
+s = 100
 dx = 0.5 * s                         #                            width hexagon  160
 dy = math.sqrt(s**2 - (0.5 * s)**2)  # sqrt(6400 - 1600) = 69.282 height hexagon 138.564 ratio 1.154701077
 strokew = 10
@@ -185,7 +185,7 @@ pdfmetrics.registerFont(TTFont('CormorantGaramondBold', 'CormorantGaramond-Bold.
 pdfmetrics.registerFont(TTFont('CormorantGaramondItalic', 'CormorantGaramond-Italic.ttf'))
 pdfmetrics.registerFont(TTFont('CormorantGaramondBoldItalic', 'CormorantGaramond-BoldItalic.ttf'))
 
-file_to_open = "Data/ReggaeLegends17.csv"
+file_to_open = "Data/ReggaeLegends17A3.csv"
 with open(file_to_open, 'r') as file:
     csvreader = csv.reader(file, delimiter = ';')
     count = 0
