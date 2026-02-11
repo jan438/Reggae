@@ -12,7 +12,7 @@ landscape width 842 height 595
 cols         distance 130
          
    1e 2   2e 3  3e 3  4e 3  5e 3    6e 3
-    70     180    330    460   590   720
+    70     200    330    460   590   720
         130    130    130   130   130
         
 rows          distance 160
