@@ -193,7 +193,7 @@ with open(file_to_open, 'r') as file:
         legendsdata.append(row)
         count += 1
 print("Count csv", count)
-#pagesize=(595.27,841.89)
+#pagesize=(1190.55,841.89)
 d = Drawing(A3[1], A3[0])
 bgrect = shapes.Rect(0, 0, A3[1], A3[0], fillColor = background1, strokeColor = background1, strokeWidth = 0)
 d.add(bgrect)
