@@ -1,0 +1,24 @@
+0 Name
+1 x
+2 y
+3 leftabove
+4 leftbelow
+5 rightbelow
+6 rightabove
+
+landscape width 842 height 595
+         middle 421
+         
+cols         distance 130
+         
+   1e 2   2e 3  3e 3  4e 3  5e 3    6e 3
+    70     180    330    460   590   720
+        130    130    130   130   130
+        
+rows          distance 160
+
+    1e    2e    3e    4e    5e    6e
+    90   180    250   340   410   490
+
+Rasta colors
+green  078930  gold  FCDD09  red  DA121A
