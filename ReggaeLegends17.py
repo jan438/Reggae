@@ -129,6 +129,7 @@ class HexagonLines(_Symbol):
         
 def drawLegendTriangle(d, i):
     # 1200 w 1588 h orig file
+    # 1200 w 1039 h cropped file
     img = "Photos/Posters/" + legendsdata[i][0] + ".png"
     d.add(Image(path = img, width = 139.5, height = 121, x = leftmargin + float(legendsdata[i][1]) - 4.5 - dx - 0.5 * dy, y = bottommargin + float(legendsdata[i][2]) - 60.5, mask = None))
     h = HexagonTriangle(leftmargin + float(legendsdata[i][1]), bottommargin + float(legendsdata[i][2]))
