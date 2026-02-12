@@ -141,7 +141,7 @@ def drawLegendLines(d, i):
     d.add(h)
     namewidth = pdfmetrics.stringWidth(legendsdata[i][0], reggaefont, 17)
     print(legendsdata[i][0], namewidth)
-    d.add(String(leftmargin + float(legendsdata[i][1]) - dx + 0.5 * (maxnamewidth - namewidth), bottommargin + float(legendsdata[i][2]) - 115, legendsdata[i][0], font = reggaefont, fillColor = HexColor(background2), fontSize = 17))
+    d.add(String(leftmargin + float(legendsdata[i][1]) - dx + 10.0 + 0.5 * (maxnamewidth - namewidth), bottommargin + float(legendsdata[i][2]) - 115, legendsdata[i][0], font = reggaefont, fillColor = HexColor(background2), fontSize = 17))
     return
     
 def scaleSVG(svgfile, scaling_factor):
