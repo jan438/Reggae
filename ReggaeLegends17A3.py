@@ -201,10 +201,10 @@ d.add(bgrect)
 for i in range(len(legendsdata)):
     drawLegendTriangle(d, i)
 d.add(transform_svg("Tribe of Judah.svg", 43.0, 635, 0.55, 0.55))  
-d.add(transform_svg("rasta.svg", 130.0, 740.0, 0.55, 0.55))
-d.add(transform_svg("cannabis.svg", 90.0, 620, 0.035, 0.035))
-d.add(transform_svg("cannabis.svg", 100.0, 620, 0.035, 0.035))
-d.add(transform_svg("cannabis.svg", 110.0, 620, 0.035, 0.035))
+d.add(transform_svg("rasta.svg", 130.0, 760.0, 0.55, 0.55))
+d.add(transform_svg("cannabis.svg", 90.0, 617, 0.035, 0.035))
+d.add(transform_svg("cannabis.svg", 100.0, 617, 0.035, 0.035))
+d.add(transform_svg("cannabis.svg", 110.0, 617, 0.035, 0.035))
 for i in range(len(legendsdata)):
     drawLegendLines(d, i)
 
