@@ -200,7 +200,7 @@ bgrect = shapes.Rect(0, 0, A3[1], A3[0], fillColor = background1, strokeColor = 
 d.add(bgrect)
 for i in range(len(legendsdata)):
     drawLegendTriangle(d, i)
-d.add(transform_svg("Tribe of Judah.svg", 45.0, 635, 0.55, 0.55))  
+d.add(transform_svg("Tribe of Judah.svg", 43.0, 635, 0.55, 0.55))  
 d.add(transform_svg("rasta.svg", 99.0, 540.5, 0.40, 0.40))
 d.add(transform_svg("cannabis.svg", 68.0, 436, 0.025, 0.025))
 d.add(transform_svg("cannabis.svg", 88.0, 436, 0.025, 0.025))
