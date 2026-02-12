@@ -9,16 +9,16 @@
 landscape width 1190.55 height 841.89
          middle 595
          
-cols         distance 130
+cols         distance ?
          
    1e 2   2e 3  3e 3  4e 3  5e 3    6e 3
-    70     180    330    460   590   720
-        130    130    130   130   130
+    100     ?      ?    ?     ?      ?
+          ?    ?      ?    ?     ?
         
-rows          distance 160
+rows          distance 220
 
     1e    2e    3e    4e    5e    6e
-    90   180    250   340   410   490
+     ?   250     ?   470     ?   690
 
 Rasta colors
 green  078930  gold  FCDD09  red  DA121A
