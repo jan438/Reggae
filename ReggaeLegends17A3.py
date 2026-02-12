@@ -199,6 +199,8 @@ d = Drawing(A3[1], A3[0])
 bgrect = shapes.Rect(0, 0, A3[1], A3[0], fillColor = background1, strokeColor = background1, strokeWidth = 0)
 d.add(bgrect)
 for i in range(len(legendsdata)):
+    if i == 3:
+        break
     drawLegendTriangle(d, i)
 d.add(transform_svg("Tribe of Judah.svg", 35.0, 450, 0.40, 0.40))  
 d.add(transform_svg("rasta.svg", 99.0, 540.5, 0.40, 0.40))
@@ -206,6 +208,8 @@ d.add(transform_svg("cannabis.svg", 68.0, 436, 0.025, 0.025))
 d.add(transform_svg("cannabis.svg", 88.0, 436, 0.025, 0.025))
 d.add(transform_svg("cannabis.svg", 108.0, 436, 0.025, 0.025))
 for i in range(len(legendsdata)):
+    if i == 3:
+        break
     drawLegendLines(d, i)
 
 renderPDF.drawToFile(d, 'PDF/ReggaeLegends17A3.pdf')
