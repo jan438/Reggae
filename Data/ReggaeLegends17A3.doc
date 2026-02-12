@@ -9,11 +9,11 @@
 landscape width 1190.55 height 841.89
          middle 595
          
-cols         distance 180
+cols         distance 185
          
    1e 2   2e 3  3e 3  4e 3  5e 3    6e 3
-    100      280      ?    ?     ?      ?
-          ?    ?      ?    ?     ?
+    100   285    470    ?     ?      ?
+              ?      ?    ?     ?
         
 rows          distance 220
 
